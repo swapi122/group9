@@ -48,7 +48,7 @@ define("USER_REGISTRATION_WELCOME_SUBJECT",'Welcome to our website!');
 define("USER_REGISTRATION_WELCOME_MSG",'');
 define("USE_LDAP",0);
 define("SMTP_USE_PHP_MAIL",0);
-define("SEF_URLS",1);
+define("SEF_URLS",0);
 define("MAINTENANCE_MODE",0);
 define("SESSION_TIMEOUT_ENABLE",1);
 define("ENABLE_SSL",0);
