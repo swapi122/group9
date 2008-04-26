@@ -22,7 +22,7 @@
 		<div id="header-links">
 			<a href="<?php echo exponent_core_makeLink(array('section'=>SITE_DEFAULT_SECTION)); ?>">Trang chủ</a> | 
 			<a href="<?php echo exponent_core_makeLink(array('section'=>16)); ?>">Liên hệ</a> | 
-			<a href="<?php echo exponent_core_makeLink(array('section'=>10)); ?>">Bảng đồ</a>
+			<a href="<?php echo exponent_core_makeLink(array('section'=>10)); ?>">Bản đồ</a>
 		</div>
 		<div id="header-login">
 			<?php exponent_theme_showModule("loginmodule","Expanded"); ?>
@@ -40,11 +40,6 @@
 		</div>
 		<div id="sidebar">
 			<?php exponent_theme_showModule("containermodule","Default","","@left"); ?>			
-			<h2>Support Styleshout</h2>
-			<p>If you are interested in supporting my work and would like to contribute, you are
-			welcome to make a small donation through the 
-			<a href="http://www.styleshout.com/">donate link</a> on my website - it will 
-			be a great help and will surely be appreciated.</p>
 		</div>
 	<!-- content-wrap ends here -->	
 	</div>
