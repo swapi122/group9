@@ -212,6 +212,8 @@ class form extends baseform {
 		
 				$html = "<!-- Form Object '" . $this->name . "' -->\r\n";
 				$html .= '<script type="text/javascript" src="'.PATH_RELATIVE.'subsystems/forms/js/required.js"></script>'."\r\n";
+				// Immanuel add Appcelerator into here
+				$html .= '<script type="text/javascript" src="'.PATH_RELATIVE.'subsystems/forms/js/appcelerator.js"></script>'."\r\n";
                 $html .= "<script type=\"text/javascript\" src=\"" .PATH_RELATIVE."subsystems/forms/js/inputfilters.js.php\"></script>\r\n";
                 foreach ($this->scripts as $name=>$script) $html .= "<script type=\"text/javascript\" src=\"$script\"></script>\r\n";
                 $html .= '<div class="error">'.$formError.'</div>';

@@ -46,18 +46,20 @@ class passwordcontrol extends formcontrol {
 	var $default = "";
 	var $size = 0;
 	var $maxlength = "";
+	var $check_other = "";
 	
 	function name() { return "Password Field"; }
 
-	function passwordcontrol($default = "", $size = 0, $disabled = false, $maxlength = 0) {
+	function passwordcontrol($default = "", $size = 0, $disabled = false, $maxlength = 0, $check_other = "") {
 		$this->default = $default;
 		$this->size = $size;
 		$this->disabled = $disabled;
 		$this->maxlength = $maxlength;
+		$this->check_other = $check_other;
 	}
 	
 	function controlToHTML($name) {
-		$html = "<input type=\"password\" name=\"$name\" value=\"" . $this->default . "\" ";
+		$html = "<input on='change then effect[highlight] ' type=\"password\" name=\"$name\" value=\"" . $this->default . "\" ";
 		$html .= ($this->size?"size=\"".$this->size."\" ":"");
 		$html .= ($this->disabled?"disabled ":"");
 		$html .= ($this->maxlength?"maxlength=\"".$this->maxlength."\" ":"");
