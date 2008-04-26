@@ -65,7 +65,7 @@ class textcontrol extends formcontrol {
 	}
 
 	function controlToHTML($name) {
-		$html = "<input class=\"textbox\" type=\"text\" name=\"$name\" value=\"" . str_replace('"',"&quot;",$this->default) . "\" ";
+		$html = "<input on='change then effect[highlight]' class=\"textbox\" type=\"text\" name=\"$name\" value=\"" . str_replace('"',"&quot;",$this->default) . "\" ";
 		$html .= ($this->size?"size=\"".$this->size."\" ":"");
 		$html .= ($this->disabled?"disabled ":"");
 		$html .= ($this->maxlength?"maxlength=\"".$this->maxlength."\" ":"");
