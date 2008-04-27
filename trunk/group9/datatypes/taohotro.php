@@ -39,26 +39,20 @@ function form($object) {
 		$form = new form();
 		if (!isset($object->id)) {
 			$object->name = '';
-			$object->url = 'http://';
-			$object->description = '';
-			$object->opennew = 1;
+			$object->url = '';
 		} else {
 			$form->meta('id',$object->id);
 		}
 		
-		$form->register('name','Name',new textcontrol($object->name));
-		$form->register('url','URL',new textcontrol($object->url));
-	//	$form->register('opennew','Open in New Window',new checkboxcontrol($object->opennew,true));
-	//	$form->register('description','Description',new texteditorcontrol($object->description));
-		$form->register('submit','',new buttongroupcontrol('Save','','Cancel'));
+		$form->register('name','Tên hiển thị',new textcontrol($object->name));
+		$form->register('url','Nick Y!M',new textcontrol($object->url));
+		$form->register('submit','',new buttongroupcontrol('Lưu','','Hủy'));
 		return $form;
 	}
 	
 	function update($values,$object) {
 		$object->name = $values['name'];
 		$object->url = $values['url'];
-		$object->opennew = (isset($values['opennew']) ? 1 : 0);
-		$object->description = $values['description'];
 		return $object;
 	}
 }

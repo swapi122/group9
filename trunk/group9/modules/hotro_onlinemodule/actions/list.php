@@ -43,7 +43,7 @@ if (!defined('EXPONENT')) exit('');
 
 	if (!defined('SYS_SORTING')) require_once(BASE.'subsystems/sorting.php');
 
-	$links = $db->selectObjects('taohotro',"location_data='".serialize($loc)."'");
+	$links = $db->selectObjects('linklist_link',"location_data='".serialize($loc)."'");
 
 	switch ($config->orderhow) {
 		case 0:
@@ -57,7 +57,7 @@ if (!defined('EXPONENT')) exit('');
 			break;
 	}
 
-	$template = new template('linklistmodule','Default',$loc);
+	$template = new template('hotro_onlinemodule','Default',$loc);
 	$template->assign('links',$links);
 	$template->register_permissions(
 		array('administrate','configure','create','edit','delete'),$loc);

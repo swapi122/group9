@@ -35,7 +35,7 @@ if (!defined('EXPONENT')) exit('');
 
 $link = null;
 if (isset($_GET['id'])) {
-	$link = $db->selectObject('taohotro','id='.$_GET['id']);
+	$link = $db->selectObject('linklist_link','id='.$_GET['id']);
 	if ($link) {
 		$loc = unserialize($link->location_data);
 	}
@@ -46,7 +46,7 @@ if (($link && exponent_permissions_check('edit',$loc)) || (!$link && exponent_pe
 	$form->location($loc);
 	$form->meta('action','save');
 	
-	$template = new template('linklistmodule','_form_edit');
+	$template = new template('hotro_onlinemodule','_form_edit');
 	$template->assign('is_edit',($link == null ? 1 : 0));
 	$template->assign('form_html',$form->toHTML());
 	$template->output();

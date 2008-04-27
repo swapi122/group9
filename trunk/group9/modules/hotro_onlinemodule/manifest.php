@@ -10,7 +10,7 @@ return array(
 	'modules/linklistmodule/views/_form_edit.tpl'=>'',
 	'datatypes/definitions/taohotro.php'=>'',
 	'datatypes/definitions/hotro_onlinemodule_config.php'=>'',
-	'datatypes/taohotro'=>'',
+	'datatypes/taohotro.php'=>'',
 	'datatypes/hotro_onlinemodule_config.php'=>'',
 
 );
