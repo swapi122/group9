@@ -42,7 +42,7 @@ if (isset($_POST['id'])) {
 }
 
 if (($link && exponent_permissions_check('edit',$loc)) || (!$link && exponent_permissions_check('create',$loc))) {
-	$link = linklist_link::update($_POST,$link);
+	$link = taohotro::update($_POST,$link);
 	$link->location_data = serialize($loc);
 	
 	if (isset($link->id)) {
