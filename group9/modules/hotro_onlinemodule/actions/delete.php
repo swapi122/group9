@@ -35,7 +35,7 @@ if (!defined('EXPONENT')) exit('');
 
 $link = null;
 if (isset($_GET['id'])) {
-	$link = $db->selectObject('taohotro','id='.$_GET['id']);
+	$link = $db->selectObject('linklist_link','id='.$_GET['id']);
 	if ($link) {
 		$loc = unserialize($link->location_data);
 	}
@@ -43,7 +43,7 @@ if (isset($_GET['id'])) {
 
 if ($link) {
 	if (exponent_permissions_check('delete',$loc)) {
-		$db->delete('taohotro','id='.$link->id);
+		$db->delete('linklist_link','id='.$link->id);
 		exponent_flow_redirect();
 	} else {
 		echo SITE_403_HTML;
