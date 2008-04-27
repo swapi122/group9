@@ -63,7 +63,7 @@ class hotro_onlinemodule {
 
 		if (!defined('SYS_SORTING')) require_once(BASE.'subsystems/sorting.php');
 
-		$links = $db->selectObjects('linklist_link',"location_data='".serialize($loc)."'");
+		$links = $db->selectObjects('taohotro',"location_data='".serialize($loc)."'");
 
 		switch ($config->orderhow) {
 			case 0:
@@ -86,13 +86,13 @@ class hotro_onlinemodule {
 
 	function deleteIn($loc) {
 		global $db;
-		$db->delete('linklist_link',"location_data='".serialize($loc)."'");
+		$db->delete('taohotro',"location_data='".serialize($loc)."'");
 	}
 
 	function copyContent($oloc,$nloc) {
-		foreach ($db->selectObjects('linklist_link',"location_data='".serialize($oloc)."'") as $l) {
+		foreach ($db->selectObjects('taohotro',"location_data='".serialize($oloc)."'") as $l) {
 			$l->location_data = serialize($nloc);
-			$db->insertObject($l,'linklist_link');
+			$db->insertObject($l,'taohotro');
 		}
 	}
 
@@ -108,19 +108,19 @@ class hotro_onlinemodule {
 		$search = null;
 		$search->category = 'Links';
 		$search->ref_module = 'hotro_onlinemodule';
-		$search->ref_type = 'linklist_link';
+		$search->ref_type = 'taohotro';
 		$search->view_link = '';
 
 		if ($item) {
-			$db->delete('search',"ref_module='hotro_onlinemodule' AND ref_type='linklist_link' AND original_id=" . $item->id);
+			$db->delete('search',"ref_module='hotro_onlinemodule' AND ref_type='taohotro' AND original_id=" . $item->id);
 			$search->original_id = $item->id;
 			$search->title = ' ' . $item->name . ' ';
 			$search->body = ' ' . exponent_search_removeHTML($item->description) . ' ';
 			$search->location_data = $item->location_data;
 			$db->insertObject($search,'search');
 		} else {
-			$db->delete('search',"ref_module='hotro_onlinemodule' AND ref_type='linklist_link'");
-			foreach ($db->selectObjects('linklist_link') as $item) {
+			$db->delete('search',"ref_module='hotro_onlinemodule' AND ref_type='taohotro'");
+			foreach ($db->selectObjects('taohotro') as $item) {
 				$search->original_id = $item->id;
 				$search->title = ' ' . $item->name . ' ';
 				$search->body = ' ' . exponent_search_removeHTML($item->description) . ' ';
