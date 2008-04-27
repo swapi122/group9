@@ -1,4 +1,4 @@
-{*
+﻿{*
  * Copyright (c) 2004-2006 OIC Group, Inc.
  * Written and Designed by James Hunt
  *
@@ -19,11 +19,11 @@
 	{if $numContacts != 0}
 		{form action=contact}
 			{control type=hidden name=msg value="_Default"}<br />
-			{control type=text name=name label=$_TR.name size=30}<br />
-			{control type=text name=email label=$_TR.email size=30}<br />
-			{control type=text name=subject label=$_TR.subject size=50}<br />
-			{control type=textarea name=message rows="8" cols="45" label=$_TR.message}<br />
-			{control type=buttongroup submit=Send}
+			{control type=text name=name label=Tên size=30}<br />
+			{control type=text name=email label=Email size=30}<br />
+			{control type=text name=subject label="Tiêu đề" size=50}<br />
+			{control type=textarea name=message rows="8" cols="45" label="Nội dung"}<br />
+			{control type=buttongroup submit=Gưi}
 		{/form}
 	{else}
 		{if $smarty.const.PREVIEW_READONLY == 1 || $permissions.configure == 1}

@@ -1,4 +1,4 @@
-{*
+﻿{*
  * Copyright (c) 2004-2006 OIC Group, Inc.
  * Written and Designed by Phillip Ball
  *
@@ -20,12 +20,12 @@
 {/if}
 {if $loggedin == true || $smarty.const.PREVIEW_READONLY == 1}
 {$_TR.welcome|sprintf:$displayname}<br />
-<a href="{link action=editprofile}">{$_TR.edit_profile}</a>&nbsp;|&nbsp;
+<a href="{link action=editprofile}">Sửa thông tin</a>&nbsp;|&nbsp;
 {if $is_group_admin}
-<a href="{link action=mygroups}">{$_TR.my_groups}</a>&nbsp;|&nbsp;
+<a href="{link action=mygroups}">Nhóm</a>&nbsp;|&nbsp;
 {/if}
-<a href="{link action=changepass}">{$_TR.change_password}</a>&nbsp;|&nbsp;
-<a href="{link action=logout}">{$_TR.logout}</a><br />
+<a href="{link action=changepass}">Đổi mật khẩu</a>&nbsp;|&nbsp;
+<a href="{link action=logout}">Thoát</a><br />
 {/if}
 {if $smarty.const.PREVIEW_READONLY == 1}
 <hr size="1" />
@@ -37,10 +37,10 @@
 <input type="hidden" name="module" value="loginmodule" />
 <input type="text" class="text" name="username" id="login_username" size="15" />
 <input type="password" class="text" name="password" id="login_password" size="15" />
-<input type="submit" class="button" value="{$_TR.login}" /><br />
+<input type="submit" class="button" value="Đăng nhập" /><br />
 {if $smarty.const.SITE_ALLOW_REGISTRATION == 1}
-<a href="{link action=createuser}">{$_TR.create_account}</a>&nbsp;|&nbsp;
-<a href="{link action=resetpass}">{$_TR.forgot_password}</a>
+<a href="{link action=createuser}">Tạo tài khoản</a>&nbsp;|&nbsp;
+<a href="{link action=resetpass}">Mất mật khẩu</a>
 {/if}
 </form>
 {/if}
