@@ -1,5 +1,5 @@
 <?php
-
+ 
 define("DISPLAY_THEME_REAL",'coolwatertheme');
 define("DISPLAY_ATTRIBUTION",'username');
 define("DISPLAY_DATETIME_FORMAT",'%A, %B %e, %l:%M%p');
@@ -51,8 +51,8 @@ define("SMTP_USE_PHP_MAIL",0);
 define("SEF_URLS",0);
 define("MAINTENANCE_MODE",0);
 define("SESSION_TIMEOUT_ENABLE",1);
-define("ENABLE_SSL",0);
 define("ENABLE_WORKFLOW",0);
+define("ENABLE_SSL",0);
 define("SITE_ALLOW_REGISTRATION",1);
 define("SITE_USE_CAPTCHA",1);
 define("USER_REGISTRATION_SEND_NOTIF",0);
