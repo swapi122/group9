@@ -1,4 +1,4 @@
-{*
+﻿{*
  * Copyright (c) 2004-2006 OIC Group, Inc.
  * Written and Designed by James Hunt
  *
@@ -31,9 +31,9 @@
 <input type="hidden" name="module" value="searchmodule" />
 <input type="hidden" name="src" value="{$loc->src}" />
 <input type="hidden" name="action" value="search" />
-<strong>{$_TR.search}: </strong><input type="text" name="search_string" size="20" />
+<strong>Tìm kiếm : </strong><input type="text" name="search_string" size="20" />
 
-<div class="moduletitle" style="margin-top:15px;">Select areas of the site you would like to search</div>(If you don't select any all will be searched)
+<div class="moduletitle" style="margin-top:15px;">Chọn những khu vực bạn muốn tìm kiếm</div>(Nếu bạn không chọn thì sẽ tìm kiếm trong tất cả)
 <hr size="1" />
 <table class="search_modulelist">
 	{foreach from=$modules key=module item=module_name name=modules}
@@ -43,5 +43,5 @@
 		<td><input type="checkbox" name="modules[]" value="{$module}">&nbsp;&nbsp;&nbsp;{$module_name}</td>
 	{/foreach}
 </table>
-<input type="submit" value="{$_TR.search}" />
+<input type="submit" value="Tìm kiếm" />
 </form>

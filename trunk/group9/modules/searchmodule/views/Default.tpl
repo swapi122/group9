@@ -1,4 +1,4 @@
-{*
+﻿{*
  * Copyright (c) 2004-2006 OIC Group, Inc.
  * Written and Designed by James Hunt
  *
@@ -21,7 +21,9 @@
 	{if $moduletitle!=""}<h1>{$moduletitle}</h1>{/if}
 	{form method="get" module="searchmodule" action="search"}
 	<input name="search_string" class="textbox" type="text" />
-	<input name="search" class="button" value="Search" type="submit" />
+	<input name="search" class="button" value="Tìm kiếm" type="submit" />
+	<br/>
+	<a href="{link module=searchmodule action=advance}">Tìm kiếm nâng cao</a>
 
 	{/form}
 	
