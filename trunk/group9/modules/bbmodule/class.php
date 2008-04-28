@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 ##################################################
 #
@@ -246,7 +246,7 @@ class bbmodule {
 	}
 
 	function searchName() {
-                return "Forums";
+                return "Diễn đàn";
         }
 	
 	function spiderContent($item = null) {

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 ##################################################
 #
@@ -217,7 +217,7 @@ class navigationmodule {
 	}
 
 	function searchName() {
-                return "Page names and meta tags";
+                return "Tên các trang web (Page names) và tên các thẻ (meta tags)";
         }
 	
 	/*

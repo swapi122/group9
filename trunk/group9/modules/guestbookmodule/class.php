@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 #############################################################
 # GUESTBOOKMODULE
@@ -142,7 +142,7 @@ class guestbookmodule {
 	}
 
 	function searchName() {
-		return "Guestbook & User Comments";
+		return "Ý kiến khách hàng";
 	}
 	
 	function spiderContent($item = null) {

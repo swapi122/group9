@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 ##################################################
 #
@@ -95,7 +95,7 @@ class listingmodule {
 	}
 
 	function searchName() {
-		return 'Listed Elements';
+		return 'Danh sách các bộ phận';
 	}
 	
 	function spiderContent($item = null) {

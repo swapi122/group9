@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 ##################################################
 #
@@ -107,7 +107,7 @@ class tasklistmodule {
 	}
 
 	function searchName() {
-		return "Tasks";
+		return "Nhiệm vụ";
 	}
 	
 	function spiderContent($item = null) {

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 ##################################################
 #
@@ -121,7 +121,7 @@ class textmodule {
 	}
 	
 	function searchName() {
-		return "Text on web pages";
+		return "Văn bản trong trang web";
 	}
 }
 

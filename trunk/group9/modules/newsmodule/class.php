@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 ##################################################
 #
@@ -305,7 +305,7 @@ class newsmodule {
 	}
 
 	function searchName() {
-                return "News Listings";
+                return "Tin tức";
         }
 	
 	function spiderContent($item = null) {
