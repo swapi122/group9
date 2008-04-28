@@ -97,7 +97,7 @@ class hotro_onlinemodule {
 	}
 
 	function searchName() {
-		return 'Web Links';
+		return 'Hỗ trợ trực tuyến';
 	}
 
 	function spiderContent($item = null) {

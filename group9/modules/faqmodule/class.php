@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 ##################################################
 #
@@ -178,7 +178,7 @@ class faqmodule {
 	}
 
 	function searchName() {
-		return "Frequently Asked Questions";
+		return "Câu hỏi thường gặp";
 	}	
 
 	function spiderContent($item = null) {

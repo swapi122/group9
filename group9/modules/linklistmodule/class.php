@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 ##################################################
 #
@@ -97,7 +97,7 @@ class linklistmodule {
 	}
 
 	function searchName() {
-		return 'Web Links';
+		return 'Liên kết Web';
 	}
 
 	function spiderContent($item = null) {

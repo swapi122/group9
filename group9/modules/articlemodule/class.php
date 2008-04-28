@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 ##################################################
 #
@@ -186,7 +186,7 @@ class articlemodule {
 	}
 
 	function searchName() {
-                return "Articles";
+                return "Điều khoản";
         }
 	
 	function spiderContent($item = null) {

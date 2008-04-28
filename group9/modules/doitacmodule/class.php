@@ -95,7 +95,7 @@ class doitacmodule {
 	}
 
 	function searchName() {
-		return 'Listed Elements';
+		return 'Danh sách đối tác';
 	}
 	
 	function spiderContent($item = null) {

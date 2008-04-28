@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 ##################################################
 #
 # Copyright (c) 2004-2006 OIC Group, Inc.
@@ -439,7 +439,7 @@ class calendarmodule {
 	}
 	
 	function searchName() {
-                return "Calendar Events";
+                return "Sự kiện";
         }
 	
 	function spiderContent($item = null) {
