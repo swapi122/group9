@@ -44,6 +44,9 @@ if (!defined("EXPONENT")) exit("");
 	if ($listing) {
 		$loc = unserialize($listing->location_data);
 		if (exponent_permissions_check("manage",$loc)) {
+			$obj = $db->selectObject('listing', 'id='.$_GET['id']);
+			$file = $db->selectObject('file','id='.$obj->file_id);
+			@file::delete($file);
 			$db->delete('listing', 'id='.$_GET['id']);
 			$db->decrement('listing', 'rank', 1, "location_data='".serialize($loc)."' AND rank > ".$listing->rank);
 			exponent_flow_redirect();

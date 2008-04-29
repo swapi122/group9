@@ -41,12 +41,13 @@
 			{/if}
 		</div>
 		{/permissions}
-		<div class="text">
-			 <h2><a href="{$listing->summary}">{$listing->name}</a></h2>
+		<div class="text" align=center>
 					{if $listing->picpath != ""}
-				<a href="{$listing->summary}">
+				<a href="{$listing->summary}" alt="{$listing->name}" title="{$listing->name}">
 					<img class="listingimage" src="thumb.php?file={$listing->picpath}&width=100&height=150"/>
 				</a>
+			{else}
+			<h2><a href="{$listing->summary}">{$listing->name}</a></h2>
 			{/if}
 		</div>
 		<div style="clear:both"></div>
@@ -54,11 +55,11 @@
 {foreachelse}
 	<div><i>Không tìm thấy đối tác nào!</i></div>
 {/foreach}	
-
+{permissions level=$smarty.const.UILEVEL_PERMISSIONS}
 {if $permissions.administrate == 1}
 <div class="moduleactions">
     <a href="{link action=edit_listing}">Thêm đối tác mới</a>
 </div>
 {/if}
-
+{/permissions}
 </div>

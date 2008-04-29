@@ -51,7 +51,7 @@ if (!defined("EXPONENT")) exit("");
 	if (exponent_permissions_check("manage",$loc)) {	
 		//Get the file save it to the temp directory
 		$source = $loc->src;
-		$directory = 'files/listingmodule/'.$source;
+		$directory = 'files/doitacmodule/'.$source;
 		$file = null;
 		if ($_FILES['upload']['name'] != '') {
 			$file = file::update("upload",$directory,null,time()."_".$_FILES['upload']['name']);
