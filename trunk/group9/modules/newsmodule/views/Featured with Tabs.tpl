@@ -63,10 +63,10 @@
 		</div>
 		<div class="links">
 			{if $news|@count >= 4}
-				<a href="{link action=view_all_news view=FeaturedTabViewAll}">View All News</a>
+				<a href="{link action=view_all_news view=FeaturedTabViewAll}">Xem tất cả tin mới</a>
 			{/if}
 			{if $permissions.add_item == true}
-				<br /><a class="mngmntlink news_mngmntlink" href="{link action=edit}">Create News</a>
+				<br /><a class="mngmntlink news_mngmntlink" href="{link action=edit}">Tạo tin mới</a>
 			{/if}
 		</div>
 	</div>

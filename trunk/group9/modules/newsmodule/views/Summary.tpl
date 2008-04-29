@@ -11,13 +11,8 @@
  * License, or (at your option) any later version.
  *
  * GPL: http://www.gnu.org/licenses/gpl.txt
- * **************************************************
- 
- *****************************************************
- 
- * Immanuel added vertical scrooler for news on 04/29
+ *
  *}
- 
 <div class="newsmodule summary">
 
 	{include file="`$smarty.const.BASE`modules/common/views/_permission_icons.tpl"}
@@ -56,7 +51,7 @@
 		<span class="date">{$newsitem->real_posted|format_date:"%A, %B %e, %Y"}</span>
 		<div class="bodycopy">
 			{$newsitem->body|summarize:"html":"para"}
-			<a class="readmore" href="{link action=view id=$newsitem->id}">Read More</a>
+			<a class="readmore" href="{link action=view id=$newsitem->id}">Đọc thêm</a>
 		</div>
 	</div>
 	{/foreach}
