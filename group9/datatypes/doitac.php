@@ -45,7 +45,7 @@ class doitac {
 		}
 		
 		$form->register('name','Tên đối tác',new textcontrol($object->name,50,false,200));
-		$form->register('summary','URL',new texteditorcontrol($object->summary));
+		$form->register('summary','URL',new textcontrol($object->summary));
 		$form->register('upload','Upload ảnh', new uploadcontrol());
 		$form->register('submit','',new buttongroupcontrol('Lưu','','Hủy'));
 		return $form;

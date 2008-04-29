@@ -11,8 +11,13 @@
  * License, or (at your option) any later version.
  *
  * GPL: http://www.gnu.org/licenses/gpl.txt
- *
+ * **************************************************
+ 
+ *****************************************************
+ 
+ * Immanuel added vertical scrooler for news on 04/29
  *}
+ 
 <div class="newsmodule summary">
 
 	{include file="`$smarty.const.BASE`modules/common/views/_permission_icons.tpl"}
