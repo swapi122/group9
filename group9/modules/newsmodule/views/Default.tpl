@@ -74,7 +74,7 @@
 
 			<div class="bodycopy">
 				{$newsitem->body|summarize:"html":"para"}
-				<a class="readmore" href="{link action=view id=$newsitem->id}">Read More</a>
+				<a class="readmore" href="{link action=view id=$newsitem->id}">Đọc thêm</a>
 			</div>
 		</div>
 	{/if}
