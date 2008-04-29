@@ -50,7 +50,7 @@
 			<h2><a href="{$listing->summary}">{$listing->name}</a></h2>
 			{/if}
 		</div>
-		<div style="clear:both"></div>
+		<!-- <div style="clear:both"></div> -->
 	</div>
 {foreachelse}
 	<div><i>Không tìm thấy đối tác nào!</i></div>

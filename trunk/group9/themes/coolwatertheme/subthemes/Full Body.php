@@ -16,8 +16,8 @@
 <div id="wrap" class="fullbody">
 	<!--header -->
 	<div id="header">			
-		<h1 id="logo-text"><a href="<?php echo URL_FULL; ?>index.php">ex<span class="green">ponent</span> <sup>CMS</sup></a></h1>		
-		<p id="slogan">The "coolwater" theme from Styleshout.com</p>		
+		<h1 id="logo-text"><a href="<?php echo URL_FULL; ?>index.php">LE<span class="green"> Website</span> <sup>Liberty Electronics</sup></a></h1>		
+		<p id="slogan">Sự hài lòng của quí khách là thành công của chúng tôi</p>		
 		<div id="header-links">
 			<?php exponent_theme_showModule("textmodule","Top Links"); ?>
 		</div>
