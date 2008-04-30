@@ -22,7 +22,7 @@ if (class_exists('coolwatertheme')) return;
 class coolwatertheme {
 	function name() { return "Coolwater Theme"; }
 	function author() { return "Đặng Tín Trung"; }
-	function description() { return "Theme cho website LE"; }
+	function description() { return "Theme cho website LE."; }
 }
 
 ?>
