@@ -42,7 +42,7 @@
 		</div>
 		{/permissions}
 		<div class="text">
-			<h2><a href="{$listing->name}">{$listing->name}</a></h2>
+			<h2><a href="{$listing->summary}">{$listing->name}</a></h2>
 		</div>
 		
 	</div>
