@@ -46,13 +46,17 @@ class listing {
 		}
 		
 		$form->register('name','Tên',new textcontrol($object->name,50,false,200));
+		$form->register('summary','Summary',new texteditorcontrol($object->summary));
+		$form->register('body','Body',new htmleditorcontrol($object->body));
+		$form->register('upload','Upload Picture', new uploadcontrol());
 		$form->register('submit','',new buttongroupcontrol('Save','','Cancel'));
 		return $form;
 	}
 	
 	function update($values,$object) {
 		$object->name = $values['name'];
-		
+		$object->summary = $values['summary'];
+		$object->body = $values['body'];
 		return $object;
 	}
 }
