@@ -28,28 +28,29 @@
 # Suite 330,
 # Boston, MA 02111-1307  USA
 #
-# $Id: listingmodule_config.php,v 1.3 2005/04/25 19:02:16 filetreefrog Exp $
+# $Id: delete_listing.php,v 1.2 2005/02/19 16:53:35 filetreefrog Exp $
 ##################################################
 
-class sanphammodule_config {
-	function form($object) {
-		if (!defined('SYS_FORMS')) require_once(BASE.'subsystems/forms.php');
-		exponent_forms_initialize();
-		
-		$form = new form();
-		if (!isset($object->id)) {
-			//nothing to do here yet
-		} else {
-			$form->meta('id',$object->id);
+if (!defined("EXPONENT")) exit("");
+
+	$listing = null;		
+	if (isset($_GET['id'])) {
+		$listing = $db->selectObject('loaisanpham', 'id='.$_GET['id']);
+		if ($listing != null) {
+			$loc = unserialize($listing->location_data);
 		}
-		
-		$form->register('submit','',new buttongroupcontrol('Save','','Cancel'));
-		return $form;
 	}
 	
-	function update($values,$object) {
-		return $object;
+	if ($listing) {
+		$loc = unserialize($listing->location_data);
+		if (exponent_permissions_check("manage",$loc)) {
+			$db->delete('loaisanpham', 'id='.$_GET['id']);
+			exponent_flow_redirect();
+		} else {
+			echo SITE_403_HTML;
+		}
+	} else {
+		echo SITE_404_HTML;
 	}
-}
 
 ?>

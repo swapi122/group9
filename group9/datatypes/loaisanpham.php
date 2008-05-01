@@ -31,7 +31,7 @@
 # $Id: listing.php,v 1.4 2005/05/10 18:32:14 filetreefrog Exp $
 ##################################################
 
-class sanpham {
+class loaisanpham {
 	function form($object) {
 		if (!defined('SYS_FORMS')) require_once(BASE.'subsystems/forms.php');
 		exponent_forms_initialize();
@@ -39,24 +39,22 @@ class sanpham {
 		$form = new form();
 		if (!isset($object->id)) {
 			$object->name = '';
-			$object->summary = '';
-			$object->body = '';
 		} else {
 			$form->meta('id',$object->id);
 		}
 		
 		$form->register('name','Tên',new textcontrol($object->name,50,false,200));
-		$form->register('summary','Summary',new texteditorcontrol($object->summary));
-		$form->register('body','Body',new htmleditorcontrol($object->body));
-		$form->register('upload','Upload Picture', new uploadcontrol());
-		$form->register('submit','',new buttongroupcontrol('Save','','Cancel'));
+		//$form->register('summary','Summary',new texteditorcontrol($object->summary));
+		//$form->register('body','Body',new htmleditorcontrol($object->body));
+		//$form->register('upload','Upload Picture', new uploadcontrol());
+		$form->register('submit','',new buttongroupcontrol('Đồng ý','','Hủy bỏ'));
 		return $form;
 	}
 	
 	function update($values,$object) {
 		$object->name = $values['name'];
-		$object->summary = $values['summary'];
-		$object->body = $values['body'];
+		//$object->summary = $values['summary'];
+		//$object->body = $values['body'];
 		return $object;
 	}
 }
