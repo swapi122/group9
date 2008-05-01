@@ -34,7 +34,7 @@
 if (!defined("EXPONENT")) exit("");
 	$listing = null;
 	if (isset($_GET['id'])) {
-		$listing = $db->selectObject("listing","id=".$_GET['id']);
+		$listing = $db->selectObject("nhasanxuat","id=".$_GET['id']);
 		if ($listing != null) {
 			$loc = unserialize($listing->location_data);
 		} 
@@ -45,7 +45,7 @@ if (!defined("EXPONENT")) exit("");
 		if ($config == null) {
 			//do nothing here yes.  
 		}
-		$form = listing::form($listing);
+		$form = nhasanxuat::form($listing);
 		$form->location($loc);
 		$form->meta("action","save_listing");
 				
