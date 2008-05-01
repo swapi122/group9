@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 ##################################################
 #
@@ -10,8 +10,8 @@
 # it and/or modify it under the terms of the GNU
 # General Public License as published by the Free
 # Software Foundation; either version 2 of the
-# License, or (at your option) any later version.A
-#A
+# License, or (at your option) any later version.
+#
 # Exponent is distributed in the hope that it
 # will be useful, but WITHOUT ANY WARRANTY;
 # without even the implied warranty of
@@ -28,35 +28,26 @@
 # Suite 330,
 # Boston, MA 02111-1307  USA
 #
-# $Id: listing.php,v 1.4 2005/05/10 18:32:14 filetreefrog Exp $
+# $Id: listingmodule_config.php,v 1.3 2005/04/25 19:02:16 filetreefrog Exp $
 ##################################################
 
-class nhasanxuat {
+class sanphammodule_config {
 	function form($object) {
 		if (!defined('SYS_FORMS')) require_once(BASE.'subsystems/forms.php');
 		exponent_forms_initialize();
 		
 		$form = new form();
 		if (!isset($object->id)) {
-			$object->name = '';
-			$object->summary = '';
-			$object->body = '';
+			//nothing to do here yet
 		} else {
 			$form->meta('id',$object->id);
 		}
 		
-		$form->register('name','Tên',new textcontrol($object->name,50,false,200));
-		$form->register('summary','Summary',new texteditorcontrol($object->summary));
-		$form->register('body','Body',new htmleditorcontrol($object->body));
-		$form->register('upload','Upload Picture', new uploadcontrol());
 		$form->register('submit','',new buttongroupcontrol('Save','','Cancel'));
 		return $form;
 	}
 	
 	function update($values,$object) {
-		$object->name = $values['name'];
-		$object->summary = $values['summary'];
-		$object->body = $values['body'];
 		return $object;
 	}
 }

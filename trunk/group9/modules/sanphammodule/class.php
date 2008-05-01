@@ -30,17 +30,17 @@
 #
 # $Id: class.php,v 1.8 2005/07/01 05:19:56 filetreefrog Exp $
 ##################################################
-/*query 
-CREATE TABLE IF NOT EXISTS `exponent_nhasanxuat` (
+/*
+CREATE TABLE IF NOT EXISTS `exponent_sanpham` (
   `id` int(11) NOT NULL auto_increment,
   `name` varchar(100) collate utf8_unicode_ci NOT NULL,
   `location_data` varchar(200) collate utf8_unicode_ci NOT NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 */
-class nhasanxuatmodule {
-	function name() { return 'Nhà sản xuất Module'; }
-	function description() { return 'Tạo danh sách các nhà sản xuất'; }
+class sanphammodule {
+	function name() { return 'Sản phẩm Module'; }
+	function description() { return 'Tạo danh sách các sản phẩm'; }
 	function author() { return 'Vttnghia'; }
 	
 	function hasSources() { return true; }
@@ -60,12 +60,12 @@ class nhasanxuatmodule {
 	function show($view,$loc = null, $title = '') {
 		global $db;
 		
-		$template = new template('nhasanxuatmodule',$view,$loc);
+		$template = new template('sanphammodule',$view,$loc);
 		
 		if (!defined('SYS_SORTING')) require_once(BASE.'subsystems/sorting.php');
 		if (!defined('SYS_FILES')) require_once(BASE.'subsystems/files.php');
 		
-		$directory = 'files/nhasanxuatmodule/' . $loc->src;
+		$directory = 'files/sanphammodule/' . $loc->src;
 		if (!file_exists(BASE.$directory)) {
 			$err = exponent_files_makeDirectory($directory);
 			if ($err != SYS_FILES_SUCCESS) {
@@ -74,7 +74,7 @@ class nhasanxuatmodule {
 			}
 		}
 		
-		$listings = $db->selectObjects('listing',"location_data='".serialize($loc)."'");
+		$listings = $db->selectObjects('sanpham',"location_data='".serialize($loc)."'");
 		for($i=0; $i<count($listings); $i++) {
 			if ($listings[$i]->file_id == 0) {
 				$listings[$i]->picpath = '';
@@ -102,7 +102,7 @@ class nhasanxuatmodule {
 	}
 
 	function searchName() {
-		return 'Danh sách các nhà sản xuất';
+		return 'Danh sách các sản phẩm';
 	}
 	
 	function spiderContent($item = null) {
@@ -112,23 +112,23 @@ class nhasanxuatmodule {
 		
 		$search = null;
 		$search->category = 'Listings';
-		$search->ref_module = 'nhasanxuatmodule';
-		$search->ref_type = 'nhasanxuat';
+		$search->ref_module = 'sanphammodule';
+		$search->ref_type = 'sanpham';
 		
 		if ($item) {
-			$db->delete('search',"ref_module='nhasanxuatmodule' AND ref_type='listing' AND original_id=" . $item->id);
+			$db->delete('search',"ref_module='sanphammodule' AND ref_type='listing' AND original_id=" . $item->id);
 			$search->original_id = $item->id;
 			$search->title = ' ' . $item->name . ' ';
-			$search->view_link = 'index.php?module=nhasanxuatmodule&action=view_listing&id='.$item->id;
+			$search->view_link = 'index.php?module=sanphammodule&action=view_listing&id='.$item->id;
 			$search->body = ' ' . exponent_search_removeHTML($item->body) . ' ';
 			$search->location_data = $item->location_data;
 			$db->insertObject($search,'search');
 		} else {
-			$db->delete('search',"ref_module='nhasanxuatmodule' AND ref_type='listing'");
+			$db->delete('search',"ref_module='sanphammodule' AND ref_type='listing'");
 			foreach ($db->selectObjects('listing') as $item) {
 				$search->original_id = $item->id;
 				$search->title = ' ' . $item->name . ' ';
-				$search->view_link = 'index.php?module=nhasanxuatmodule&action=view_listing&id='.$item->id;
+				$search->view_link = 'index.php?module=sanphammodule&action=view_listing&id='.$item->id;
 				$search->body = ' ' . exponent_search_removeHTML($item->body) . ' ';
 				$search->location_data = $item->location_data;
 				$db->insertObject($search,'search');

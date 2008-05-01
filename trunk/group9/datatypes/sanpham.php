@@ -31,7 +31,7 @@
 # $Id: listing.php,v 1.4 2005/05/10 18:32:14 filetreefrog Exp $
 ##################################################
 
-class nhasanxuat {
+class sanpham {
 	function form($object) {
 		if (!defined('SYS_FORMS')) require_once(BASE.'subsystems/forms.php');
 		exponent_forms_initialize();
