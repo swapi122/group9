@@ -63,29 +63,11 @@ class nhasanxuatmodule {
 		$template = new template('nhasanxuatmodule',$view,$loc);
 		
 		if (!defined('SYS_SORTING')) require_once(BASE.'subsystems/sorting.php');
-		if (!defined('SYS_FILES')) require_once(BASE.'subsystems/files.php');
 		
-		$directory = 'files/nhasanxuatmodule/' . $loc->src;
-		if (!file_exists(BASE.$directory)) {
-			$err = exponent_files_makeDirectory($directory);
-			if ($err != SYS_FILES_SUCCESS) {
-				$template->assign('noupload',1);
-				$template->assign('uploadError',$err);
-			}
-		}
-		
-		$listings = $db->selectObjects('listing',"location_data='".serialize($loc)."'");
-		for($i=0; $i<count($listings); $i++) {
-			if ($listings[$i]->file_id == 0) {
-				$listings[$i]->picpath = '';
-			} else {
-				$file = $db->selectObject('file', 'id='.$listings[$i]->file_id);
-				$listings[$i]->picpath = $file->directory.'/'.$file->filename;
-			}
-		}
+		$listings = $db->selectObjects('nhasanxuat',"location_data='".serialize($loc)."'");
 		
 		//sort the listings by their rank
-		usort($listings, 'exponent_sorting_byRankAscending');
+		usort($listings, 'exponent_sorting_byNameAscending');
 		
 		$template->register_permissions(array('administrate','configure'),$loc);
 		$template->assign('listings', $listings);

@@ -39,7 +39,7 @@ a:hover {
 }
 
 /* headers */
-h1, h2, h3 { font-family: 'Trebuchet MS', Tahoma, Sans-serif;  }
+h1, h2, h3, form_title { font-family: 'Trebuchet MS', Tahoma, Sans-serif;  }
 h1 {
 	font-size: 180%;	
 	font-weight: normal;	

@@ -35,62 +35,23 @@ if (!defined("EXPONENT")) exit("");
 
 	$listing = null;		
 	if (isset($_POST['id'])) {
-		$listing = $db->selectObject('listing', 'id='.$_POST['id']);
+		$listing = $db->selectObject('nhasanxuat', 'id='.$_POST['id']);
 		if ($listing != null) {
 			$loc = unserialize($listing->location_data);
 		} 
 	} else {
-		$listing->rank = $db->max('listing', 'rank', 'location_data', "location_data='".serialize($loc)."'");
-		if ($listing->rank == null) {
-			$listing->rank = 0;
-		} else { 
-			$listing->rank += 1;
-		}
+		//$listing->rank = $db->max('nhasanxuat', 'rank', 'location_data', "location_data='".serialize($loc)."'");
 	}
 	
 	if (exponent_permissions_check("manage",$loc)) {	
-		//Get the file save it to the temp directory
-		$source = $loc->src;
-		$directory = 'files/listingmodule/'.$source;
-		$file = null;
-		if ($_FILES['upload']['name'] != '') {
-			$file = file::update("upload",$directory,null,time()."_".$_FILES['upload']['name']);
-			if ($file == null) {
-				switch($_FILES["upload"]["error"]) {
-					case UPLOAD_ERR_INI_SIZE:
-					case UPLOAD_ERR_FORM_SIZE:
-						$post['_formError'] = "The file you attempted to upload is too large.  Contact your system administrator if this is a problem.";
-						break;
-					case UPLOAD_ERR_PARTIAL:
-						$post['_formError'] = "The file was only partially uploaded.";
-						break;
-					case UPLOAD_ERR_NO_FILE:
-						$post['_formError'] = "No file was uploaded.";
-						break;
-					default:
-						$post['_formError'] = "A strange internal error has occured.  Please contact the Exponent Developers.";
-						break;
-				}
-				exponent_sessions_set("last_POST",$post);
-				header("Location: " . $_SERVER['HTTP_REFERER']);
-				exit("");
-			}
-		}
 		
-		$listing = listing::update($_POST, $listing);
+		$listing = nhasanxuat::update($_POST, $listing);
 		$listing->location_data = serialize($loc);
-		if ($file != null) {
-			$listing->file_id = $db->insertObject($file, 'file');
-		} else {
-			if (!isset($listing->id)) {
-				$listing->file_id = 0;
-			}
-		}
 		
 		if (isset($listing->id)) {
-			$db->updateObject($listing,"listing");
+			$db->updateObject($listing,"nhasanxuat");
 		} else {
-			$db->insertObject($listing,"listing");
+			$db->insertObject($listing,"nhasanxuat");
 		}		
 		
 		exponent_flow_redirect();
