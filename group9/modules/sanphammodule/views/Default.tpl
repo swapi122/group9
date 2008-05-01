@@ -47,12 +47,12 @@
 		
 	</div>
 {foreachelse}
-	<div><i>Không có nhà sản xuất nào</i></div>
+	<div><i>Không có sản phẩm nào</i></div>
 {/foreach}	
 
 {if $permissions.administrate == 1}
 <div class="moduleactions">
-    <a href="{link action=edit_listing}">Thêm nhà sản xuất mới</a>
+    <a href="{link action=edit_listing}">Thêm sản phẩm mới</a>
 </div>
 {/if}
 
