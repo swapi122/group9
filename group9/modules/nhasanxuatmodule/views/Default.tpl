@@ -42,7 +42,7 @@
 		</div>
 		{/permissions}
 		<div class="text">
-			<h2><a href="{$listing->summary}">{$listing->name}</a></h2>
+			<h2 style="font-size: 14px;"><img src="{$smarty.const.ICON_RELATIVE}bullet_orange.png" border=0><a href="{$listing->summary}">{$listing->name}</h2>
 		</div>
 		
 	</div>
