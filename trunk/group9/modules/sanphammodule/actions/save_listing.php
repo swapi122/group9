@@ -35,12 +35,12 @@ if (!defined("EXPONENT")) exit("");
 
 	$listing = null;		
 	if (isset($_POST['id'])) {
-		$listing = $db->selectObject('listing', 'id='.$_POST['id']);
+		$listing = $db->selectObject('sanpham', 'id='.$_POST['id']);
 		if ($listing != null) {
 			$loc = unserialize($listing->location_data);
 		} 
 	} else {
-		$listing->rank = $db->max('listing', 'rank', 'location_data', "location_data='".serialize($loc)."'");
+		$listing->rank = $db->max('sanpham', 'rank', 'location_data', "location_data='".serialize($loc)."'");
 		if ($listing->rank == null) {
 			$listing->rank = 0;
 		} else { 
@@ -51,7 +51,7 @@ if (!defined("EXPONENT")) exit("");
 	if (exponent_permissions_check("manage",$loc)) {	
 		//Get the file save it to the temp directory
 		$source = $loc->src;
-		$directory = 'files/listingmodule/'.$source;
+		$directory = 'files/sanphammodule/'.$source;
 		$file = null;
 		if ($_FILES['upload']['name'] != '') {
 			$file = file::update("upload",$directory,null,time()."_".$_FILES['upload']['name']);
@@ -77,7 +77,7 @@ if (!defined("EXPONENT")) exit("");
 			}
 		}
 		
-		$listing = listing::update($_POST, $listing);
+		$listing = sanpham::update($_POST, $listing);
 		$listing->location_data = serialize($loc);
 		if ($file != null) {
 			$listing->file_id = $db->insertObject($file, 'file');
@@ -88,9 +88,9 @@ if (!defined("EXPONENT")) exit("");
 		}
 		
 		if (isset($listing->id)) {
-			$db->updateObject($listing,"listing");
+			$db->updateObject($listing,"sanpham");
 		} else {
-			$db->insertObject($listing,"listing");
+			$db->insertObject($listing,"sanpham");
 		}		
 		
 		exponent_flow_redirect();
