@@ -34,14 +34,14 @@
 if (!defined("EXPONENT")) exit("");
 	$listing = null;
 	if (isset($_GET['id'])) {
-		$listing = $db->selectObject("listing","id=".$_GET['id']);
+		$listing = $db->selectObject("sanpham","id=".$_GET['id']);
 		if ($listing != null) {
 			$loc = unserialize($listing->location_data);
 		} 
 	}
 	
 	if (exponent_permissions_check("manage",$loc)) {
-		$config = $db->selectObject('listingmodule_config',"location_data='".serialize($loc)."'");
+		$config = $db->selectObject('sanphammodule_config',"location_data='".serialize($loc)."'");
 		if ($config == null) {
 			//do nothing here yes.  
 		}
@@ -49,7 +49,7 @@ if (!defined("EXPONENT")) exit("");
 		$form->location($loc);
 		$form->meta("action","save_listing");
 				
-		$template = new template("listingmodule","_form_editlisting",$loc);
+		$template = new template("sanphammodule","_form_editlisting",$loc);
 		$template->assign("is_edit",(isset($listing->id) ? 1 : 0));
 		$template->assign("form_html",$form->toHTML());
 		$template->output();

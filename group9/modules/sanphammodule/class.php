@@ -31,12 +31,25 @@
 # $Id: class.php,v 1.8 2005/07/01 05:19:56 filetreefrog Exp $
 ##################################################
 /*
-CREATE TABLE IF NOT EXISTS `exponent_sanpham` (
-  `id` int(11) NOT NULL auto_increment,
-  `name` varchar(100) collate utf8_unicode_ci NOT NULL,
-  `location_data` varchar(200) collate utf8_unicode_ci NOT NULL,
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+drop table `exponent_sanpham`;
+create table `exponent_sanpham` (
+`product_id` int( 10 ) not NULL ,
+`product_type_id` int( 10 ) not NULL ,
+`producer_id` int( 10 ) not NULL ,
+`tensp` varchar( 20 ) not NULL ,
+`ngaynhap` datetime not NULL ,
+`namsanxuat` smallint,
+`xuatxu` varchar( 20 ) ,
+`baohanh` tinyint,
+`gia` decimal not NULL ,
+`kichthuoc` varchar( 20 ) ,
+`mausac` varchar( 10 ) ,
+`hinhanh` varchar( 50 ) not NULL ,
+`chitiet` varchar( 200 ) ,
+`download` varchar( 50 ) not NULL ,
+`file_id` int(11),
+primary key ( `masp` ) 
+) comment = 'hinhanh and download field link to files';
 */
 class sanphammodule {
 	function name() { return 'Sản phẩm Module'; }
@@ -125,7 +138,7 @@ class sanphammodule {
 			$db->insertObject($search,'search');
 		} else {
 			$db->delete('search',"ref_module='sanphammodule' AND ref_type='listing'");
-			foreach ($db->selectObjects('listing') as $item) {
+			foreach ($db->selectObjects('sanpham') as $item) {
 				$search->original_id = $item->id;
 				$search->title = ' ' . $item->name . ' ';
 				$search->view_link = 'index.php?module=sanphammodule&action=view_listing&id='.$item->id;
