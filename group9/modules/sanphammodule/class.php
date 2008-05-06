@@ -36,19 +36,19 @@ create table `exponent_sanpham` (
 `product_id` int( 10 ) not NULL ,
 `product_type_id` int( 10 ) not NULL ,
 `producer_id` int( 10 ) not NULL ,
-`tensp` varchar( 20 ) not NULL ,
+`tensp` varchar( 20 ) collate utf8_unicode_ci not NULL ,
 `ngaynhap` datetime not NULL ,
 `namsanxuat` smallint,
-`xuatxu` varchar( 20 ) ,
+`xuatxu` varchar( 20 ) collate utf8_unicode_ci ,
 `baohanh` tinyint,
 `gia` decimal not NULL ,
-`kichthuoc` varchar( 20 ) ,
-`mausac` varchar( 10 ) ,
-`hinhanh` varchar( 50 ) not NULL ,
-`chitiet` varchar( 200 ) ,
-`download` varchar( 50 ) not NULL ,
+`kichthuoc` varchar( 20 ) collate utf8_unicode_ci,
+`mausac` varchar( 10 ) collate utf8_unicode_ci,
+`hinhanh` varchar( 50 ) collate utf8_unicode_ci not NULL ,
+`chitiet` varchar( 200 ) collate utf8_unicode_ci,
+`download` varchar( 50 ) collate utf8_unicode_ci not NULL ,
 `file_id` int(11),
-primary key ( `masp` ) 
+primary key ( `product_id` ) 
 ) comment = 'hinhanh and download field link to files';
 */
 class sanphammodule {
