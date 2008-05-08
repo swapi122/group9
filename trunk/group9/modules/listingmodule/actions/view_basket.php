@@ -32,25 +32,9 @@
 ##################################################
 
 if (!defined("EXPONENT")) exit("");
-	$listing = null;
-	if (isset($_GET['id'])) {
-		$listing = $db->selectObject("listing","id=".$_GET['id']);
-		if ($listing != null) {
-			$loc = unserialize($listing->location_data);
-		} else {
-			echo SITE_404_HTML;
-		}
-	}	
-	
 	global $db;
-	if ($listing->file_id!=0) {
-		$file = $db->selectObject('file', "id=".$listing->file_id);
-		$listing->picpath = $file->directory."/".$file->filename;
-	} else {
-		$listing->picpath = "";
-	}
-	
+		
 	$template = new template("listingmodule","_view_basket",$loc);
-	$template->assign('listing', $listing);
+	$template->assign('moduletitle', "Trung đẹp trai" );
 	$template->output();
 ?>
