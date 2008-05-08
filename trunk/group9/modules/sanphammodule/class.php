@@ -1,34 +1,6 @@
 ﻿<?php
 
-##################################################
-#
-# Copyright (c) 2004-2005 OIC Group, Inc.
-#
-# This file is part of Exponent
-#
-# Exponent is free software; you can redistribute
-# it and/or modify it under the terms of the GNU
-# General Public License as published by the Free
-# Software Foundation; either version 2 of the
-# License, or (at your option) any later version.
-#
-# Exponent is distributed in the hope that it
-# will be useful, but WITHOUT ANY WARRANTY;
-# without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR
-# PURPOSE.  See the GNU General Public License
-# for more details.
-#
-# You should have received a copy of the GNU
-# General Public License along with Exponent; if
-# not, write to:
-#
-# Free Software Foundation, Inc.,
-# 59 Temple Place,
-# Suite 330,
-# Boston, MA 02111-1307  USA
-#
-# $Id: class.php,v 1.8 2005/07/01 05:19:56 filetreefrog Exp $
+
 ##################################################
 /*
 drop table `exponent_sanpham`;
@@ -51,6 +23,11 @@ create table `exponent_sanpham` (
 primary key ( `product_id` ) 
 ) comment = 'hinhanh and download field link to files';
 */
+
+/*
+ * Author: Đặng Tín Trung & Võ Trần Trọng Nghĩa
+ * Write on date:  
+ */
 class sanphammodule {
 	function name() { return 'Sản phẩm Module'; }
 	function description() { return 'Tạo danh sách các sản phẩm'; }
@@ -73,35 +50,36 @@ class sanphammodule {
 	function show($view,$loc = null, $title = '') {
 		global $db;
 		
+		/*
+		 * Các biến sau này cứ việc set cứng giá trị. sau này sẽ chuyển vào config
+		 * Hàm này sẽ show ra các sản phẩm nào được add vào mới nhất
+		 */ 
+		$max_product_per_type = 5;
+		
+		
 		$template = new template('sanphammodule',$view,$loc);
 		
 		if (!defined('SYS_SORTING')) require_once(BASE.'subsystems/sorting.php');
 		if (!defined('SYS_FILES')) require_once(BASE.'subsystems/files.php');
 		
-		$directory = 'files/sanphammodule/' . $loc->src;
-		if (!file_exists(BASE.$directory)) {
-			$err = exponent_files_makeDirectory($directory);
-			if ($err != SYS_FILES_SUCCESS) {
-				$template->assign('noupload',1);
-				$template->assign('uploadError',$err);
-			}
+		// lấy loại sản phẩm
+		$product_types = $db->selectObjects('loaisanpham');
+		// Sort lại theo tên
+		usort($product_types, 'exponent_sorting_byNameAscending');
+		// ứng với mỗi loại sản phẩm, ta móc từng sản phẩm ra
+		for ($i=0;$i<count($product_types);$i++)
+		{
+			// lấy product_type ID
+			$product_type_id = $product_types[$i]->id;
+			// search các sản phẩm trong loại này với ngày giảm dần
+			$sanpham=$db->selectObjects("sanpham","id = {$product_type_id}","postdate DESC LIMIT 0,{$max_product_per_type}");
+			// nạp vào cho product_type này
+			// mình viết như thế này, mặc dầu trong object product_types không hề có thuộc tính sanpham, nhưng PHP sẽ tự thêm vào
+			$product_types[$i]->sanpham = $sanpham;
 		}
-		
-		$listings = $db->selectObjects('sanpham',"location_data='".serialize($loc)."'");
-		for($i=0; $i<count($listings); $i++) {
-			if ($listings[$i]->file_id == 0) {
-				$listings[$i]->picpath = '';
-			} else {
-				$file = $db->selectObject('file', 'id='.$listings[$i]->file_id);
-				$listings[$i]->picpath = $file->directory.'/'.$file->filename;
-			}
-		}
-		
-		//sort the listings by their rank
-		usort($listings, 'exponent_sorting_byRankAscending');
 		
 		$template->register_permissions(array('administrate','configure'),$loc);
-		$template->assign('listings', $listings);
+		$template->assign('product_types', $product_types);
 		$template->assign('moduletitle', $title);
 		$template->output();
 	}
