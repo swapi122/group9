@@ -13,7 +13,7 @@
 		{/permissions}
 
 	{if $moduletitle}<h1>{$moduletitle}</h1>{/if}
-	{foreach name=a from=$listings item=listing}
+	{foreach name=a from=$product_types item=product_type}
 	<div class="item">
 		{permissions level=$smarty.const.UILEVEL_PERMISSIONS}
 		<div class="itemactions">
@@ -42,12 +42,18 @@
 		</div>
 		{/permissions}
 		<div class="text">
-			<h2><a href="{$listing->summary}">{$listing->name}</a></h2>
+			<h2><a href="{$product_type->id}">{$product_type->name}</a></h2>
+			{* Liệt kê sản phẩm ở đây*}
+			{foreach name=a from=$product_type->sanpham item=sanpham}
+			{* Liệt kê các biến trong object sanpham ra tại đây, làm sơ sơ để chứng tỏ mình làm rồi. Còn lại là của Triết*}
+			{foreachelse}
+				<div><i>Không có sản phẩm nào</i></div>
+			{/foreach}	
 		</div>
 		
 	</div>
 {foreachelse}
-	<div><i>Không có sản phẩm nào</i></div>
+	<div><i>Chưa có loại sản phẩm</i></div>
 {/foreach}	
 
 {if $permissions.administrate == 1}

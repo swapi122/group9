@@ -38,7 +38,7 @@ class sanphammodule_config {
 		
 		$form = new form();
 		if (!isset($object->id)) {
-			//nothing to do here yet
+			
 		} else {
 			$form->meta('id',$object->id);
 		}
