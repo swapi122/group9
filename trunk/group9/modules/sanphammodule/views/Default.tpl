@@ -46,6 +46,9 @@
 			{* Liệt kê sản phẩm ở đây*}
 			{foreach name=a from=$product_type->sanpham item=sanpham}
 			{* Liệt kê các biến trong object sanpham ra tại đây, làm sơ sơ để chứng tỏ mình làm rồi. Còn lại là của Triết*}
+				<div id="sanpham">
+					Tên sản phẩm: {$sanpham->name}
+				</div>
 			{foreachelse}
 				<div><i>Không có sản phẩm nào</i></div>
 			{/foreach}	

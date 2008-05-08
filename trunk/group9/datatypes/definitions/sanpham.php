@@ -1,7 +1,7 @@
 <?php
 
 return array(
-	'product_id'=>array(
+	'id'=>array(
 		DB_FIELD_TYPE=>DB_DEF_ID,
 		DB_PRIMARY=>true,
 		DB_INCREMENT=>true),
@@ -10,13 +10,15 @@ return array(
 		DB_FIELD_LEN=>250),
 	'product_type_id'=>array(
 		DB_FIELD_TYPE=>DB_DEF_ID),
-	'producer_id'=>array(
+	'provider_id'=>array(
 		DB_FIELD_TYPE=>DB_DEF_ID),
 	'tensp'=>array(
 		DB_FIELD_TYPE=>DB_DEF_STRING),
 	'ngaynhap'=>array(
 		DB_FIELD_TYPE=>DB_DEF_TIMESTAMP),
 	'namsanxuat'=>array(
+		DB_FIELD_TYPE=>DB_DEF_INTEGER),
+	'postdate'=>array(
 		DB_FIELD_TYPE=>DB_DEF_INTEGER),
 	'xuatxu'=>array(
 		DB_FIELD_TYPE=>DB_DEF_STRING),

@@ -4,33 +4,31 @@
 ##################################################
 /*
 drop table `exponent_sanpham`;
-create table `exponent_sanpham` (
-`product_id` int( 10 ) not NULL ,
-`product_type_id` int( 10 ) not NULL ,
-`producer_id` int( 10 ) not NULL ,
-`tensp` varchar( 20 ) collate utf8_unicode_ci not NULL ,
-`ngaynhap` datetime not NULL ,
-`namsanxuat` smallint,
-`xuatxu` varchar( 20 ) collate utf8_unicode_ci ,
-`baohanh` tinyint,
-`gia` decimal not NULL ,
-`kichthuoc` varchar( 20 ) collate utf8_unicode_ci,
-`mausac` varchar( 10 ) collate utf8_unicode_ci,
-`hinhanh` varchar( 50 ) collate utf8_unicode_ci not NULL ,
-`chitiet` varchar( 200 ) collate utf8_unicode_ci,
-`download` varchar( 50 ) collate utf8_unicode_ci not NULL ,
-`file_id` int(11),
-primary key ( `product_id` ) 
-) comment = 'hinhanh and download field link to files';
+CREATE TABLE `exponent_SanPham` (
+`id` BIGINT NOT NULL ,
+`product_type_id` BIGINT NOT NULL ,
+`provider_id` BIGINT NOT NULL ,
+`name` TEXT NOT NULL ,
+`ngaysanxuat` INT( 14 ) NOT NULL ,
+`namsanxuat` SMALLINT,
+`xuatxu` VARCHAR,
+`baohanh` TINYINT,
+`gia` BIGINT NOT NULL ,
+`kichthuoc` TEXT,
+`mausac` TEXT,
+`file_id` INT NOT NULL ,
+`chitiet` TEXT,
+PRIMARY KEY ( `id` ) 
+) 
 */
 
 /*
- * Author: Đặng Tín Trung & Võ Trần Trọng Nghĩa
+ * Author: &#272;&#7863;ng Tín Trung & Võ Tr&#7847;n Tr&#7885;ng Ngh&#297;a
  * Write on date:  
  */
 class sanphammodule {
-	function name() { return 'Sản phẩm Module'; }
-	function description() { return 'Tạo danh sách các sản phẩm'; }
+	function name() { return 'S&#7843;n ph&#7849;m Module'; }
+	function description() { return 'T&#7841;o danh sách các s&#7843;n ph&#7849;m'; }
 	function author() { return 'Vttnghia'; }
 	
 	function hasSources() { return true; }
@@ -66,18 +64,18 @@ class sanphammodule {
 		$product_types = $db->selectObjects('loaisanpham');
 		// Sort lại theo tên
 		usort($product_types, 'exponent_sorting_byNameAscending');
-		// ứng với mỗi loại sản phẩm, ta móc từng sản phẩm ra
+		// ứng với mỗi loại sản phẩm, ta móc từng sản phẩm ra				
 		for ($i=0;$i<count($product_types);$i++)
 		{
 			// lấy product_type ID
 			$product_type_id = $product_types[$i]->id;
 			// search các sản phẩm trong loại này với ngày giảm dần
-			$sanpham=$db->selectObjects("sanpham","id = {$product_type_id}","postdate DESC LIMIT 0,{$max_product_per_type}");
+			$sanpham=$db->selectObjects("sanpham","product_type_id = {$product_type_id}","postdate DESC LIMIT 0,{$max_product_per_type}");
+
 			// nạp vào cho product_type này
 			// mình viết như thế này, mặc dầu trong object product_types không hề có thuộc tính sanpham, nhưng PHP sẽ tự thêm vào
 			$product_types[$i]->sanpham = $sanpham;
 		}
-		
 		$template->register_permissions(array('administrate','configure'),$loc);
 		$template->assign('product_types', $product_types);
 		$template->assign('moduletitle', $title);
@@ -93,7 +91,7 @@ class sanphammodule {
 	}
 
 	function searchName() {
-		return 'Danh sách các sản phẩm';
+		return 'Danh sách các s&#7843;n ph&#7849;m';
 	}
 	
 	function spiderContent($item = null) {

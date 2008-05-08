@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 ##################################################
 #
@@ -37,17 +37,17 @@ class sanpham {
 		exponent_forms_initialize();
 		
 		$form = new form();
-		if (!isset($object->masp)) {
+		if (!isset($object->id)) {
 			$object->name = '';
-			$object->summary = '';
-			$object->body = '';
+			//$object->summary = '';
+			//$object->body = '';
 		} else {
-			$form->meta('masp',$object->masp);
+			$form->meta('id',$object->id);
 		}
 		
-		$form->register('name','T�n',new textcontrol($object->name,50,false,200));
-		$form->register('summary','Summary',new texteditorcontrol($object->summary));
-		$form->register('body','Body',new htmleditorcontrol($object->body));
+		$form->register('name','Tên',new textcontrol($object->name,50,false,200));
+		//$form->register('summary','Summary',new texteditorcontrol($object->summary));
+		//$form->register('body','Body',new htmleditorcontrol($object->body));
 		$form->register('upload','Upload Picture', new uploadcontrol());
 		$form->register('submit','',new buttongroupcontrol('Save','','Cancel'));
 		return $form;
@@ -55,8 +55,8 @@ class sanpham {
 	
 	function update($values,$object) {
 		$object->name = $values['name'];
-		$object->summary = $values['summary'];
-		$object->body = $values['body'];
+		//$object->summary = $values['summary'];
+		//$object->body = $values['body'];
 		return $object;
 	}
 }
