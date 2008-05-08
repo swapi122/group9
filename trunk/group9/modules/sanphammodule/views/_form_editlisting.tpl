@@ -28,8 +28,8 @@
  *
  * $Id: _form_editlisting.tpl,v 1.2 2005/02/19 16:53:36 filetreefrog Exp $
  *}
-<div class="form_title">{if $is_edit}Edit Listing{else}New Listing{/if}</div>
+<div class="form_title">{if $is_edit} Sửa sản phẩm {else}Sản phẩm mới{/if}</div>
 <div class="form_header">
-Enter information for this listing below.
+Vui lòng điền thông tin vào đây
 </div>
 {$form_html}

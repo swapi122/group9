@@ -70,8 +70,8 @@ class sanphammodule {
 			// lấy product_type ID
 			$product_type_id = $product_types[$i]->id;
 			// search các sản phẩm trong loại này với ngày giảm dần
-			$sanpham=$db->selectObjects("sanpham","product_type_id = {$product_type_id}","postdate DESC LIMIT 0,{$max_product_per_type}");
 
+			$sanpham=$db->selectObjects("sanpham","product_type_id = {$product_type_id}","postdate DESC LIMIT 0,{$max_product_per_type}");
 			// nạp vào cho product_type này
 			// mình viết như thế này, mặc dầu trong object product_types không hề có thuộc tính sanpham, nhưng PHP sẽ tự thêm vào
 			$product_types[$i]->sanpham = $sanpham;
