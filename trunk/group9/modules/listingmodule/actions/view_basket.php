@@ -33,7 +33,14 @@
 
 if (!defined("EXPONENT")) exit("");
 	global $db;
-		
+		if (!defined("EXPONENT")) exit("");
+	$listing = null;
+	if (isset($_GET['id'])) {
+		$listing = $db->selectObject("giohang","id=".$_GET['id']);
+		if ($giohang != null) {
+			$loc = unserialize($giohang->location_data);
+		} else {
+			echo SITE_404_HTML;
 	$template = new template("listingmodule","_view_basket",$loc);
 	$template->assign('moduletitle', "Trung đẹp trai" );
 	$template->output();
