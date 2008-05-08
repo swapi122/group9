@@ -73,7 +73,6 @@ if (!defined("EXPONENT")) exit("");
 		}
 		
 		$listing = sanpham::update($_POST, $listing);
-		$listing->location_data = serialize($loc);
 		if ($file != null) {
 			$listing->file_id = $db->insertObject($file, 'file');
 		} else {

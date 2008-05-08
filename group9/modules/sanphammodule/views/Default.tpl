@@ -43,15 +43,7 @@
 		{/permissions}
 		<div class="text">
 			<h2><a href="{$product_type->id}">{$product_type->name}</a></h2>
-			{* Liệt kê sản phẩm ở đây*}
-			{foreach name=a from=$product_type->sanpham item=sanpham}
-			{* Liệt kê các biến trong object sanpham ra tại đây, làm sơ sơ để chứng tỏ mình làm rồi. Còn lại là của Triết*}
-				<div id="sanpham">
-					Tên sản phẩm: {$sanpham->name}
-				</div>
-			{foreachelse}
-				<div><i>Không có sản phẩm nào</i></div>
-			{/foreach}	
+			{include file="`$smarty.const.BASE`modules/sanphammodule/views/_sanpham.tpl}
 		</div>
 		
 	</div>
@@ -61,7 +53,7 @@
 
 {if $permissions.administrate == 1}
 <div class="moduleactions">
-    <a href="{link action=edit_listing}">Thêm sản phẩm mới</a>
+    <a href="{link action=edit_product}">Thêm sản phẩm mới</a>
 </div>
 {/if}
 
