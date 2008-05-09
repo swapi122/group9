@@ -55,32 +55,21 @@ class giohangmodule {
 	function show($view,$loc = null, $title = "") {
 		global $db;
 
-		$config = $db->selectObject('giohangmodule_config',"location_data='".serialize($loc)."'");
-		if ($config == null) {
-			$config->orderby = 'name';
-			$config->orderhow = 0; // Ascending
-		}
-
-		if (!defined('SYS_SORTING')) require_once(BASE.'subsystems/sorting.php');
-
-		$links = $db->selectObjects('linklist_link',"location_data='".serialize($loc)."'");
-
-		switch ($config->orderhow) {
-			case 0:
-				usort($links,'exponent_sorting_byNameAscending');
-				break;
-			case 1:
-				usort($links,'exponent_sorting_byNameDescending');
-				break;
-			case 2:
-				shuffle($links);
-				break;
-		}
-
-		$template = new template('giohangmodule',$view,$loc);
-		$template->assign('links',$links);
+		// mình chưa muốn nó query theo session_id vì có nhiều vấn đề phức tạp
+		// do đó mình set cứng như thế này, làm xong sẽ sửa lại
+		$session_id = 1;
+	
+		
+	    // xóa bỏ những record mà người mua đã chọn hàng quá lâu, xem như bị timeout
+	    // tính năng này sẽ làm sau		
+		
+		// query hết tất cả các sản phẩm đang được chọn trong giỏ hàng
+		// các sản phẩm này được nhận biết là của người đang xem bởi field session_id
+		$product_count = $db->countObjects('giohang',"session_id = {$session_id}");
+		
+		$template = new template('giohangmodule',"Default",$loc);
 		$template->assign('moduletitle',$title);
-		$template->register_permissions(array('administrate','configure','create','edit','delete'),$loc);
+		$template->assign('product_count',$product_count );
 		$template->output();
 	}
 
