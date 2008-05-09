@@ -39,16 +39,35 @@ class sanpham {
 		$form = new form();
 		if (!isset($object->id)) {
 			$object->name = '';
-			// khởi động giá trị mặc định cho object này nếu chưa có trêndb
+			//$object->summary = '';
+			//$object->body = '';
 		} else {
 			$form->meta('id',$object->id);
 		}
+		global $db;
+		$nhasanxuat=$db->selectColumn("nhasanxuat","id,name");
 		
-		// add các control tương ứng
-		// tên control chính là tham số thứ nhất, và giá trị cũng ương ứng là field name trên table sanpham
-		// anh thêm các field còn lại vao đây cho đủ với table sanpham
-		$form->register('name','Tên sản phẩm',new textcontrol($object->name,50,false,200));
+		for ($i=0; i<count($nhasanxuat); $i++){
+			$provider_id=$nhasanxuat[$i]->id;
+		}
 		
+			//$provider_name
+		$loaisanpham=$db->selectColumn("loaisanpham","id,name");
+		for ($i=0; i<count($loaisanpham); $i++){
+			$product_type_id[$i] = $loaisanpham[$i]->id;
+			$product_type_name [$i]= $loaisanpham[$i]->name;
+		}
+		$arr=array('1','2');
+		$form->register('name','Tên',new textcontrol($object->name,50,false,200));
+		$form->register('product_type_id','Loại sản phẩm',new dropdowncontrol($object->product_type_id,$arr));
+		$form->register('provider_id','Hãng sản xuất',new textcontrol($object->provider_id,50,false,200));
+		$form->register('postdate','Ngày đăng',new textcontrol($object->postdate,50,false,200));
+
+		$form->register('xuatxu','Xuất xứ',new textcontrol($object->xuatxu,50,false,200));
+		$form->register('kichthuoc','Kích thước',new textcontrol($object->kichthuoc,50,false,200));
+		$form->register('mausac','Màu sắc',new textcontrol($object->mausac,50,false,200));
+		$form->register('chitiet','Chi tiết',new htmleditorcontrol($object->chitiet));
+		//$form->register('body','Body',new htmleditorcontrol($object->body));
 		$form->register('upload','Upload Picture', new uploadcontrol());
 		$form->register('submit','',new buttongroupcontrol('Save','','Cancel'));
 		return $form;
@@ -56,10 +75,13 @@ class sanpham {
 	
 	function update($values,$object) {
 		$object->name = $values['name'];
-		// chổ này anh phải update giá trị từ $values sang cho $object theo cú pháp trên
-		// anh làm hết với các field còn lại
-		//$object->summary = $values['summary'];
-		//$object->body = $values['body'];
+		$object->xuatxu = $values['xuatxu'];
+		$object->kichthuoc = $values['kichthuoc'];
+		$object->mausac = $values['mausac'];
+		$object->chitiet = $values['chitiet'];
+		$object->product_type_id = $values['product_type_id'];
+		$object->provider_id = $values['provider_id'];
+		
 		return $object;
 	}
 }
