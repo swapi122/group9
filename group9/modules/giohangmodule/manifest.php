@@ -7,7 +7,7 @@ return array(
 	'modules/giohangmodule/actions/save.php'=>'',
 	'modules/giohangmodule/actions/delete.php'=>'',
 	'modules/giohangmodule/views/Default.tpl'=>'',
-	'modules/giohangmodule/views/_form_edit.tpl'=>'',
+	'modules/giohangmodule/views/_viewbasket.tpl'=>'',
 	'datatypes/definitions/giohangmodule_config.php'=>'',
 	'datatypes/giohangmodule_config.php'=>'',
 
