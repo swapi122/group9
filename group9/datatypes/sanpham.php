@@ -39,28 +39,33 @@ class sanpham {
 		$form = new form();
 		if (!isset($object->id)) {
 			$object->name = '';
+			// anh phải reset các biến ở đây nữa. phải reset hết luôn mới không có lỗi
+			$object->xuatxu = "";
 			//$object->summary = '';
 			//$object->body = '';
 		} else {
 			$form->meta('id',$object->id);
 		}
 		global $db;
-		$nhasanxuat=$db->selectColumn("nhasanxuat","id,name");
-		
-		for ($i=0; i<count($nhasanxuat); $i++){
-			$provider_id=$nhasanxuat[$i]->id;
+		$nhasanxuat=$db->selectDropdown("nhasanxuat","name" );
+		// get first item of this array for default item
+		$default_nhasanxuat;
+		foreach ($nhasanxuat as $value=>$caption)
+		{
+			$default_nhasanxuat=$value;
+			break;
+		}
+		$default_loaisanpham;
+		$loaisanpham=$db->selectDropdown("loaisanpham","name" );
+		foreach ($loaisanpham as $value=>$caption)
+		{
+			$default_loaisanpham=$value;
+			break;
 		}
 		
-			//$provider_name
-		$loaisanpham=$db->selectColumn("loaisanpham","id,name");
-		for ($i=0; i<count($loaisanpham); $i++){
-			$product_type_id[$i] = $loaisanpham[$i]->id;
-			$product_type_name [$i]= $loaisanpham[$i]->name;
-		}
-		$arr=array('1','2');
 		$form->register('name','Tên',new textcontrol($object->name,50,false,200));
-		$form->register('product_type_id','Loại sản phẩm',new dropdowncontrol($object->product_type_id,$arr));
-		$form->register('provider_id','Hãng sản xuất',new textcontrol($object->provider_id,50,false,200));
+		$form->register('product_type_id','Loại sản phẩm',new dropdowncontrol($default_loaisanpham,$loaisanpham,true));
+		$form->register('provider_id','Hãng sản xuất',new dropdowncontrol($default_nhasanxuat,$nhasanxuat,true));
 		$form->register('postdate','Ngày đăng',new textcontrol($object->postdate,50,false,200));
 
 		$form->register('xuatxu','Xuất xứ',new textcontrol($object->xuatxu,50,false,200));
