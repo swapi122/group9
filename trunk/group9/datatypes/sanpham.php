@@ -78,7 +78,7 @@ class sanpham {
 		$form->register('product_type_id','Loại sản phẩm',new dropdowncontrol($default_loaisanpham,$loaisanpham,true));
 		$form->register('provider_id','Hãng sản xuất',new dropdowncontrol($default_nhasanxuat,$nhasanxuat,true));
 		$form->register('xuatxu','Xuất xứ',new textcontrol($object->xuatxu,50,false,200));
-		$form->register('ngaysanxuat','Ngày sản xuất',new popupdatetimecontrol($object->ngaysanxuat,$i18n['nopublish']));
+		$form->register('ngaysanxuat','Ngày sản xuất',new popupdatetimecontrol($object->ngaysanxuat));
 		$form->register('gia','Giá',new textcontrol($object->name,50,false,200));
 		$form->register('baohanh','Bảo hành',new textcontrol($object->baohanh,50,false,200));
 		$form->register('kichthuoc','Kích thước',new textcontrol($object->kichthuoc,50,false,200));
@@ -101,6 +101,7 @@ class sanpham {
 		$object->provider_id = $values['provider_id'];
 		$object->postdate = date("Y/m/d");
 		$object->ngaysanxuat = $values['ngaysanxuat'];
+		$object->ngaysanxuat = popupdatetimecontrol::parseData('ngaysanxuat',$values);
 		$object->gia = $values['gia'];
 		$object->baohanh = $values['baohanh'];
 		return $object;
