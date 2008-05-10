@@ -1,5 +1,5 @@
 {$moduletitle}
-<form method=POST action=index.php>
+<form method=POST action=index.php name=basket_form>
 <input type=hidden name=action value="update_basket">
 <input type=hidden name=module value="giohangmodule">
 <table width=100% border=0>
@@ -28,7 +28,7 @@
         </td>
         <td>
         {* Số lượng *}
-        {$product->quality}
+        <input type=textbox name="sl{$product->id}" value="{$product->quality}" size=3>
         </td>
         <td>
         {$product->product_detail->gia*$product->quality}
@@ -51,7 +51,7 @@
 <td>&nbsp;</td>
 <td width="80" align="center" background="{$smarty.const.THEME_RELATIVE}images/butchitiet.gif" class="butchitiet"><a class="butchitiet" href="#">Quay lại</a></td>
 <td width="30">&nbsp;</td>
-<td width="80" height="22" align="center" background="{$smarty.const.THEME_RELATIVE}images/butchitiet.gif"><a class="butchitiet" href="#">Cập nhật</a></td>
+<td width="80" height="22" align="center" background="{$smarty.const.THEME_RELATIVE}images/butchitiet.gif"><a class="butchitiet" href="javascript: document.forms['basket_form'].submit();">Cập nhật</a></td>
 <td width="30" align="center">&nbsp;</td>
 <td width="80" align="center" background="{$smarty.const.THEME_RELATIVE}images/butchitiet.gif" class="butchitiet"><a class="butchitiet" href="#">Rổng giỏ hàng</a></td>
 <td width="30" align="center">&nbsp;</td>

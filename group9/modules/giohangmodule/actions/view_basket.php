@@ -9,6 +9,8 @@ if (!defined("EXPONENT")) exit("");
 		
 	if (!defined('SYS_SORTING')) require_once(BASE.'subsystems/sorting.php');
 	if (!defined('SYS_FILES')) require_once(BASE.'subsystems/files.php');
+	//save url
+	exponent_flow_set(SYS_FLOW_PUBLIC,SYS_FLOW_ACTION);
 		
     // xóa bỏ những record mà người mua đã chọn hàng quá lâu, xem như bị timeout
     // tính năng này sẽ làm sau		
