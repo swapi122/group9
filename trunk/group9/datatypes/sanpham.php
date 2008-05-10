@@ -41,6 +41,16 @@ class sanpham {
 			$object->name = '';
 			// anh phải reset các biến ở đây nữa. phải reset hết luôn mới không có lỗi
 			$object->xuatxu = "";
+			$object->gia = '';
+			$object->baohanh = '';
+			$object->xuatxu = '';
+			$object->kichthuoc = '';
+			$object->mausac = '';
+			$object->chitiet = '';
+			$object->product_type_id = '';
+			$object->provider_id = '';
+			$object->postdate = '';
+			$object->ngaysanxuat = '';
 			//$object->summary = '';
 			//$object->body = '';
 		} else {
@@ -50,8 +60,9 @@ class sanpham {
 		$nhasanxuat=$db->selectDropdown("nhasanxuat","name" );
 		// get first item of this array for default item
 		$default_nhasanxuat;
+		
 		foreach ($nhasanxuat as $value=>$caption)
-		{
+		{ 
 			$default_nhasanxuat=$value;
 			break;
 		}
@@ -66,15 +77,17 @@ class sanpham {
 		$form->register('name','Tên',new textcontrol($object->name,50,false,200));
 		$form->register('product_type_id','Loại sản phẩm',new dropdowncontrol($default_loaisanpham,$loaisanpham,true));
 		$form->register('provider_id','Hãng sản xuất',new dropdowncontrol($default_nhasanxuat,$nhasanxuat,true));
-		$form->register('postdate','Ngày đăng',new textcontrol($object->postdate,50,false,200));
-
 		$form->register('xuatxu','Xuất xứ',new textcontrol($object->xuatxu,50,false,200));
+		$form->register('ngaysanxuat','Ngày sản xuất',new popupdatetimecontrol($object->ngaysanxuat,$i18n['nopublish']));
+		$form->register('gia','Giá',new textcontrol($object->name,50,false,200));
+		$form->register('baohanh','Bảo hành',new textcontrol($object->baohanh,50,false,200));
 		$form->register('kichthuoc','Kích thước',new textcontrol($object->kichthuoc,50,false,200));
 		$form->register('mausac','Màu sắc',new textcontrol($object->mausac,50,false,200));
 		$form->register('chitiet','Chi tiết',new htmleditorcontrol($object->chitiet));
-		//$form->register('body','Body',new htmleditorcontrol($object->body));
 		$form->register('upload','Upload Picture', new uploadcontrol());
+		//$form->register('postdate','Ngày đăng',new datetimecontrol($object->postdate,true,true));
 		$form->register('submit','',new buttongroupcontrol('Save','','Cancel'));
+
 		return $form;
 	}
 	
@@ -86,7 +99,10 @@ class sanpham {
 		$object->chitiet = $values['chitiet'];
 		$object->product_type_id = $values['product_type_id'];
 		$object->provider_id = $values['provider_id'];
-		
+		$object->postdate = date("Y/m/d");
+		$object->ngaysanxuat = $values['ngaysanxuat'];
+		$object->gia = $values['gia'];
+		$object->baohanh = $values['baohanh'];
 		return $object;
 	}
 }
