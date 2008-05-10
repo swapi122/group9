@@ -53,7 +53,7 @@
 <td width="30">&nbsp;</td>
 <td width="80" height="22" align="center" background="{$smarty.const.THEME_RELATIVE}images/butchitiet.gif"><a class="butchitiet" href="javascript: document.forms['basket_form'].submit();">Cập nhật</a></td>
 <td width="30" align="center">&nbsp;</td>
-<td width="80" align="center" background="{$smarty.const.THEME_RELATIVE}images/butchitiet.gif" class="butchitiet"><a class="butchitiet" href="#">Rổng giỏ hàng</a></td>
+<td width="80" align="center" background="{$smarty.const.THEME_RELATIVE}images/butchitiet.gif" class="butchitiet"><a class="butchitiet" href="{link action=clear_basket module=giohangmodule}">Rổng giỏ hàng</a></td>
 <td width="30" align="center">&nbsp;</td>
 <td width="80" align="center" background="{$smarty.const.THEME_RELATIVE}images/butchitiet.gif" class="butchitiet"><a class="butchitiet" href="{link action=checkout}">Đặt hàng</a></td>
 <td>&nbsp;</td>
