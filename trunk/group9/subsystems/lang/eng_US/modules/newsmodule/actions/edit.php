@@ -1,7 +1,7 @@
 <?php
 
 return array(
-	'tags'=>'Available Tags',
+	'tags'=>'Nhãn có thể dùng',
 );
 
 ?>

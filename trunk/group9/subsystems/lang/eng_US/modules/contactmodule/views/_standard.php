@@ -1,9 +1,9 @@
 <?php
 
 return array(
-	'alt_userperm'=>'Assign user permissions on this Contact Form',
-	'alt_groupperm'=>'Assign group permissions on this Contact Form',
-	'alt_configure'=>'Configure this Contact Form',
+	'alt_userperm'=>'Chỉ định quyền hạn người dùng trên mẫu đơn liên hệ này',
+	'alt_groupperm'=>'Chỉ định quyền hạn nhóm trên mẫu đon liên hệ này',
+	'alt_configure'=>'Cấu hình mẫu đơn liên hệ này',
 );
 
 ?>

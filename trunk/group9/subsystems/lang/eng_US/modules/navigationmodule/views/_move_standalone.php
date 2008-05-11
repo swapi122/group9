@@ -1,8 +1,8 @@
 <?php
 
 return array(
-	'form_title'=>'Move Standalone Page',
-	'form_header'=>'Select the standalone page you wish to move into the Site Hierarchy, and click "Save"',
+	'form_title'=>'Di chuyển trang độc lập',
+	'form_header'=>'Chọn trang độc lập bạn muốn di chuyển vào hệ thống trang, và nhấn  "Lưu"',
 );
 
 ?>

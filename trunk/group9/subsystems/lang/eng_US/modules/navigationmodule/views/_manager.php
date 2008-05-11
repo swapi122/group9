@@ -1,22 +1,22 @@
 <?php
 
 return array(
-	'hierarchy'=>'Hierarchy',
-	'standalone_pages'=>'Standalone&nbsp;Pages',
-	'pagesets'=>'Pagesets',
+	'hierarchy'=>'Hệ thống',
+	'standalone_pages'=>'Độc lập&nbsp;Các trang',
+	'pagesets'=>'Các Pageset',
 	
-	'form_title'=>'Manage Site Navigation',
-	'form_header'=>'Manage the pages and site structure here.',
+	'form_title'=>'Quản lý định hướng trang',
+	'form_header'=>'Quản lý cấu trúc các trang ở đây.',
 	
-	'new_top_level'=>'Create a New Top Level Page',
-	'new_sub_page'=>'Add Subpage',
+	'new_top_level'=>'Tạo một trang cấp cao nhất mới',
+	'new_sub_page'=>'Thêm trang con',
 	
-	'delete_page_confirm'=>'Are you sure you want to move this page and all of its subpages out of the site hiearchy? \n (They will not be deleted, but will instead become standalone pages)',
-	'delete_ext_confirm'=>'Are you sure you want to delete this external alias?',
-	'delete_int_confirm'=>'Are you sure you want to delete this internal alias?',
+	'delete_page_confirm'=>'Bạn có muốn di chuyển trang này và tất cả các trang con của nó ra khỏi hệ thống? \n (Chúng sẽ không bị xóa, Nhưng thay vào đó,chúng sẽ trở thành các trang độc lập)',
+	'delete_ext_confirm'=>'Bạn có chắc muốn xóa bí danh bên ngòai này?',
+	'delete_int_confirm'=>'Bạn có chắc muốn xóa bí danh bên trong này?',
 		
-	'alt_userperm'=>'Assign user permissions for viewing this page',
-	'alt_groupperm'=>'Assign group permissions for viewing this page',
+	'alt_userperm'=>'Phân quyền cho người dùng để xem trang này',
+	'alt_groupperm'=>'Phân quyền nhóm để xem trang này',
 );
 
 ?>

@@ -1,20 +1,20 @@
 <?php
 
 return array(
-	'page_of'=>'Page %d of %d',
-	'image_plural'=>'images',
-	'image_singular'=>'image',
-	'image_in_gallery'=>'%s in the gallery.',
-	'by_name'=>'By Name',
-	'by_creation_date'=>'By Date of Creation',
-	'ascending'=>'Ascending',
-	'descending'=>'Descending',
-	'sort_images'=>'Order Images',
-	'previous'=>'Previous',
-	'next'=>'Next',
-	'upload_files'=>'Upload images:',
-	'upload'=>'Upload',
-	'whole_number'=>'Please enter only positive, whole numbers.'
+	'page_of'=>'Trang %d của %d',
+	'image_plural'=>'Các hình ảnh',
+	'image_singular'=>'Hình ảnh',
+	'image_in_gallery'=>'%s ở nơi trưng bày.',
+	'by_name'=>'Theo tên',
+	'by_creation_date'=>'Theo ngày được tạo',
+	'ascending'=>'Tăng dần',
+	'descending'=>'Giảm dần',
+	'sort_images'=>'Trật tự hình ảnh',
+	'previous'=>'Trước',
+	'next'=>'Tiếm theo',
+	'upload_files'=>'Tải hình ảnh lên:',
+	'upload'=>'Tải lên',
+	'whole_number'=>'Làm ơn chỉ nhập vào điều xác thực, các con số chính xác.'
 
 );
 

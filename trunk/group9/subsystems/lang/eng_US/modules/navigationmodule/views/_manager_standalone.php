@@ -1,21 +1,21 @@
 <?php
 
 return array(
-	'hierarchy'=>'Hierarchy',
-	'standalone_pages'=>'Standalone&nbsp;Pages',
-	'pagesets'=>'Pagesets',
+	'hierarchy'=>'Hệ thống',
+	'standalone_pages'=>'Độc lập&nbsp;Các trang',
+	'pagesets'=>'Các Pageset',
 	
-	'form_title'=>'Manage Standalone Pages',
-	'form_header'=>'Standalone pages do not appear in the site hiearchy, but still have their own content and act just like other pages.',
+	'form_title'=>'Quản lý các trang độc lập',
+	'form_header'=>'Các trang độc lập klhông xuất hiện ở hệ thống trang này, nhưng vẫn có nội dung riêng và họat động như các trang khác.',
 	
-	'new'=>'Create a New Standalone Page',
-	'delete_confirm'=>'Are you sure you want to delete this page and all of its content?',
+	'new'=>'Tạo một tragn độc lập mới',
+	'delete_confirm'=>'Bạn có muốn xóa trang này và tất cả nội dung của nó',
 	
 	
-	'alt_userperm'=>'Assign user permissions for this page',
-	'alt_groupperm'=>'Assign group permissions for this page',
+	'alt_userperm'=>'Phân quyền người dùng cho trang này',
+	'alt_groupperm'=>'Phân quyền nhóm cho trang này',
 	
-	'no_pages'=>'No standalone pages found',
+	'no_pages'=>'Không có trang độc lập nào được tìm thấy',
 );
 
 ?>

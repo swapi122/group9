@@ -1,9 +1,9 @@
 <?php
 
 return array(
-	'form_title'=>'Pageset Properties',
-	'form_header'=>'Pageset Properties are mapped onto section properties when a Pageset is selected as the Page Type.',
-	'is_top'=>'The name you specify for this Pageset will be used for reference only.  It will be replaced by whatever is entered into the name field of the "Add Section" form.',
+	'form_title'=>'Thuộc tính Pageset',
+	'form_header'=>'Thuộc tính Pageset  được xếp vào thuộc tính của khu vực khi Pageset được chọn như một lọai trang',
+	'is_top'=>'Tên mà bạn định rõ cho Pageset này sẽ chỉ được sử dụng để tham vấn.  Nó sẽ được thay thế bởi bất cứ thứ gì được nhập vào ô tên của mẫu đơn  "Thêm Vùng" form.',
 	
 );
 

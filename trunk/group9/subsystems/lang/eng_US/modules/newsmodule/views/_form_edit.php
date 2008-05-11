@@ -1,9 +1,9 @@
 <?php
 
 return array(
-	'form_title_new'=>'Post a new News Item',
-	'form_title_edit'=>'Edit News Item',
-	'form_header'=>'The Publish and Unpublish dates are optional, and are not dependent on one another.  You can, for instance, specify a publish date without an Unpublish date.<br /><br />If you specify a Publish Date, the News Item will not appear on the site until that date and time.<br />If you specify an Unpublish Date, the News Item will disappear after that date and time.',
+	'form_title_new'=>'Đăng một mục tin tức mới',
+	'form_title_edit'=>'Chỉnh sửa mục tin tức',
+	'form_header'=>'Ngày công bố và không công bốh tùy chọn, không phụ thuộc nhau.  Bạn có thể, cho ví dụ, định rõ ngày công bố mà không cần ngày không công bố.<br /><br />Nếu bạn định rõ ngày công bố, mục tin tức sẽ không xuất hiện trên trang cho đến ngày ấn định.<br />Nếu bạn định rõ ngày không công bố, mục tin tức sẽ không xuất hiện sau ngày đó.',
 );
 
 ?>

@@ -1,20 +1,20 @@
 <?php
 
 return array(
-	'hierarchy'=>'Hierarchy',
-	'standalone_pages'=>'Standalone&nbsp;Pages',
-	'pagesets'=>'Pagesets',
+	'hierarchy'=>'Hệ thống',
+	'standalone_pages'=>'Độc lập&nbsp;Các trang',
+	'pagesets'=>'Các Pageset',
 	
-	'form_title'=>'Manage Pagesets',
-	'form_header'=>'Pagesets are powerful tools to help you manage your site hierarchy.  A pageset is sort of like a sectional template layout - it allows you to define a commonly repeated structure as a miniature navigation hierarchy.  When you add a new section, you can set the page type to one of your Pagesets, and the sectional structure will be created for you, automatically.<br /><br />Another benefit of pagesets is default page content.  Any page in the page set can have modules on it, and the content of those modules is then copied to the newly created sections.',
+	'form_title'=>'Quản lý các Pageset',
+	'form_header'=>'Các Pageset là các công cụ mạnh giúp bạn quản lý hệ thống trang web.  Một pageset giống phần nào cách bố trí mẫu trang web - Nó cho phép bạn định nghĩa một cấu trúc lặp thông thừơng như một hệ thống định hướng thu nhỏ.  When you add a new section, bạn có thể bố trí một trang đến một trong các Pageset của mình, Và cấu trúc vùng sẽ được tạo ra cho bạn, một cách tự động.<br /><br />Cái lợi khác của Pageset là nội dung trang mặc định.  bất cứ trang nào trên page set đều có thể có các module, và nội dung của các module đó sẽ được sao chép đến vùng mới tạo khác.',
 	
-	'new'=>'Create a New Pageset',
+	'new'=>'Tạo một Pageset mới',
 	
-	'view'=>'View',
-	'properties'=>'Properties',
-	'delete'=>'Delete',
-	'delete_confirm'=>'Are you sure you want to delete this template?',
-	'no_pagesets'=>'No pagesets found',
+	'view'=>'Xem',
+	'properties'=>'Thuộc tính',
+	'delete'=>'Xóa',
+	'delete_confirm'=>'Bạn có chắc muốn xóa mẫu này không?',
+	'no_pagesets'=>'Không có pageset nào được tìm thấy',
 );
 
 ?>

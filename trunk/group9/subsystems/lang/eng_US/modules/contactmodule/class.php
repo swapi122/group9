@@ -1,11 +1,11 @@
 <?php
 
 return array(
-	'module_name'=>'Contact Form',
-	'module_description'=>'Presents a form to the web viewer, which they can use to contact users.',
+	'module_name'=>'Mẫu đơn liên hệ',
+	'module_description'=>'Biểu diễn một mẫu đơn lên trình xem web,cái mà họ có thể dùng để liên hệ người dùng.',
 	
-	'perm_administrate'=>'Administrate',
-	'perm_configure'=>'Configure',
+	'perm_administrate'=>'Quản trị',
+	'perm_configure'=>'Cấu hình',
 );
 
 ?>

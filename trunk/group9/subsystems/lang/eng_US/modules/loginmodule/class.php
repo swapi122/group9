@@ -1,9 +1,9 @@
 <?php
 
 return array(
-	'module_name'=>'Login Module',
-	'module_author'=>'OIC Group, Inc.',
-	'module_description'=>'Allows users to login to the site.',
+	'module_name'=>'Module đăng nhập',
+	'module_author'=>'Nhóm OIC, Inc.',
+	'module_description'=>'Cho phép các ngừơi dùng đăng nhập vào trang.',
 );
 
 ?>

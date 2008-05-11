@@ -1,25 +1,25 @@
 <?php
 
 return array(
-	'form_title'=>'Add New Page to Site Navigation',
-	'new_top_level'=>'You are adding a new top-level page.',
-	'new_sub_level'=>'You are adding a new sub page to "%s".',
-	'form_header'=>'Please select the type of page you would like to add.',
+	'form_title'=>'Thêm trang mới vào trang định hướng',
+	'new_top_level'=>'Bạn đang thêm mới một trang cấp cao nhất.',
+	'new_sub_level'=>'Bạn đang thêm một trang con mới vào "%s".',
+	'form_header'=>'Xin chọn lọai trang mà bạn muốn thêm vào.',
 	
-	'content_page'=>'Content Page',
-	'content_page_desc'=>'Content Pages are regular pages on the site that allow you to add modules to them.  With content pages, you are able to override the global Site Title, Site Description and Site Keywords settings.',
+	'content_page'=>'Trang nội dung',
+	'content_page_desc'=>'Trang nội dung là những trang thông thường của trang web,cho phép bạn thêm module vào chúng.  Với các trang nội dung, bạn có thể ghi đè lên tòan bộ tựa đề trang, Đặc tả trang và bố trí từ khóa trang.',
 	
-	'ext_link'=>'External Website Link',
-	'ext_link_desc'=>'If you need or want a link in your site hiearchy to link to some off-site webpage, create an External Link.',
+	'ext_link'=>'Liên kết trang web bên ngoài',
+	'ext_link_desc'=>'Nếu bạn muốn trang của bạn liên kết đến một hệ thống trang web bên ngoài, tạo một liên kết bên ngoài.',
 	
-	'int_link'=>'Internal Page Alias',
-	'int_link_desc'=>'If you need or want a link to another page in your site hierarchy, use an internal page alias.',
+	'int_link'=>'Bí danh trang bên trong',
+	'int_link_desc'=>'Nếu bạn cần liên kết đến một trang trong hệ thống trang web của bạn, sử dụng một bí danh trang bên trong.',
 	
 	'pageset'=>'Pageset',
-	'pageset_desc'=>'Pagesets are powerful tools that allow you to create sections with default content and subsections by adding a single pageset.',
+	'pageset_desc'=>'Pageset là các công cụ đặc biệt cho phép bạn tạo các vùng với nội dung mặc định và các vùng con bằng cách thêm vào một bố Pageset đơn.',
 	
-	'standalone'=>'Move Standalone Page',
-	'standalone_desc'=>'Use this if you want to move a standalone page into the navigation hierarchy.',
+	'standalone'=>'Dời trang độc lập',
+	'standalone_desc'=>'Sử dụng điều này để dời 1 trang độc lập vào hệ thống định hướng của bạn.',
 );
 
 ?>

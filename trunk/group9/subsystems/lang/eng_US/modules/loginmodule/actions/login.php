@@ -1,7 +1,7 @@
 <?php
 
 return array(
-	'login_error'=>'Invalid Username / Password',
+	'login_error'=>'Người dùng/Mật khẩu không có hiệu lực',
 );
 
 ?>

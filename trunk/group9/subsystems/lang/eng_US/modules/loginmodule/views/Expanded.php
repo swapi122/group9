@@ -1,19 +1,19 @@
 <?php
 
 return array(
-	'logged_in_users'=>'Logged-in users see this',
+	'logged_in_users'=>'Ngừơi dùng đã đăng nhập thấu được điều này',
 	
-	'welcome'=>'Welcome, %s',
-	'edit_profile'=>'Edit Profile',
-	'my_groups'=>'My Groups',
-	'change_password'=>'Change Password',
-	'logout'=>'Logout',
+	'welcome'=>'Chào mừng, %s',
+	'edit_profile'=>'Chỉnh sửa thông tin',
+	'my_groups'=>'Nhóm của tôi',
+	'change_password'=>'Thay đổi mật khẩu',
+	'logout'=>'Đăng xuất',
 	
-	'anon_users'=>'Anonymous visitors see this',
-	'login'=>'Login',
+	'anon_users'=>'Khách viếng thăm thấy được điều này',
+	'login'=>'Đăng nhập',
 	
-	'create_account'=>'Create Account',
-	'forgot_password'=>'Retrieve Password',
+	'create_account'=>'Tạo tài khỏang',
+	'forgot_password'=>'Khôi phục mật khẩu',
 );
 
 ?>

@@ -1,7 +1,7 @@
 <?php
 
 return array(
-	'pick_section'=>'Pick a section to see the images that have been uploaded for use.',
+	'pick_section'=>'Chọn một khu vực để thấy các hình được tải lên để sử dụng.',
 );
 
 ?>

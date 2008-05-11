@@ -1,9 +1,9 @@
 <?php
 
 return array(
-	'form_title'=>'Create a new Section from a Pageset',
-	'form_header'=>'Please select the pageset from the list below.',
-	'note'=>'Note: once you save, you will not be able to edit this information.  Using pagesets is a shortcut for creating a number of sections and giving them default content.',
+	'form_title'=>'Tạo một vùng mới từ một Pageset',
+	'form_header'=>'Xin lựa chọn Pageset từ danh sách dưới đây.',
+	'note'=>'Lưu ý: Khi bạn lưu, bạn sẽ không thể chỉnh sửa thông tin này.  Việc sử dụng các pageset là một biện pháp nhanh chóng để tạo một số vùng và gán cho chúng nội dung mặc định',
 );
 
 ?>

@@ -1,7 +1,7 @@
 <?php
 
 return array(
-	'manage'=>'manage',
+	'manage'=>'Quản lý',
 );
 
 ?>

@@ -1,7 +1,7 @@
 <?php
 
 return array(
-	'message'=>"You requested that your password be reset.\r\n\r\nplease follow this link to confirm that you do want it reset:",
+	'message'=>"Bạn đã yêu cầu mật khẩu của mình được đặt lại.\r\n\r\nXin theo liên kết này để xác nhận rằng bạn muốn đặt lại:",
 );
 
 ?>

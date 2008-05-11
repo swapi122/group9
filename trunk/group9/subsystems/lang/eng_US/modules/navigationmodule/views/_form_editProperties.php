@@ -1,7 +1,7 @@
 <?php
 
 return array(
-	'form_title'=>'Edit Page Properties',
+	'form_title'=>'Chỉnh sửa thuộc tính trang',
 );
 
 ?>

@@ -1,8 +1,8 @@
 <?php
 
 return array(
-	'back'=>'Back to Template',
-	'err_not_readable'=>'Page "%s" not readable.',
+	'back'=>'Trở về mẫu',
+	'err_not_readable'=>'Trang "%s" không thể đọc.',
 );
 
 ?>

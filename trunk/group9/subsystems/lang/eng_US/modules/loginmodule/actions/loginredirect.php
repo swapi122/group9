@@ -1,7 +1,7 @@
 <?php
 
 return array(
-	'login'=>'Log In',
+	'login'=>'Đăng nhập',
 );
 
 ?>

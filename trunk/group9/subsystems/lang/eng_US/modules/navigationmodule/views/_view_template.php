@@ -1,12 +1,12 @@
 <?php
 
 return array(
-	'name'=>'Name of Section',
-	'subpage'=>'Add Subpage',
-	'properties'=>'Properties',
-	'content'=>'Page Content',
-	'delete'=>'Delete',
-	'back'=>'Back To Manager',
+	'name'=>'Tên khu vực',
+	'subpage'=>'Thêm trang con',
+	'properties'=>'Thuộc tình',
+	'content'=>'Nội dung trang',
+	'delete'=>'Xóa',
+	'back'=>'Quay lại bộ quản lý',
 );
 
 ?>

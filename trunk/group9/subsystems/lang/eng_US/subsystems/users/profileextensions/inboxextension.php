@@ -1,11 +1,11 @@
 <?php
 
 return array(
-	'extension_name'=>'Private Message Center Extension',
-	'extension_description'=>'Allow users to configure email forwarding, and view their private messages from their profile.',
+	'extension_name'=>'Trung tâm tin nhắn cá nhân mở rộng',
+	'extension_description'=>'Cho phép người dùng cấu hình chuyển đến email, và xem tin nhắn cá nhân của họ trong thông tin ngừơi dùng của họ.',
 	
-	'header'=>'Private Message Center Options',
-	'forward'=>'Forward All Private Messages to my Email Address',
+	'header'=>'Lựa chọn trung tâm tin nhắn cá nhân',
+	'forward'=>'Chuyển tất cả tin nhắn cá nhân đến địa chỉ mail của tôi',
 );
 
 ?>

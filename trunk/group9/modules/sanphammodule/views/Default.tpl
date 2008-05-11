@@ -15,26 +15,25 @@
 	{if $moduletitle}<h1>{$moduletitle}</h1>{/if}
 	{foreach name=a from=$product_types item=product_type}
 	<div class="item">
-		{permissions level=$smarty.const.UILEVEL_PERMISSIONS}
-		<div class="itemactions">
+		<div class="text">
+			<h2><a href="{$product_type->id}">{$product_type->name}</a>
+			{permissions level=$smarty.const.UILEVEL_PERMISSIONS}
 			{if $permissions.configure == 1 or $permissions.administrate == 1}
-				<a href="{link action=edit_product id=$product_type->id}" title="Sửa mẩu tin">
+				<a href="{link action=edit_listing id=$product_type->id module=loaisanphammodule}" title="Sửa lọai sản phẩm" alt="Sửa lọai sản phẩm">
 					<img src="{$smarty.const.ICON_RELATIVE}edit.png" title="{$_TR.alt_edit}" alt="{$_TR.alt_edit}" />
 				</a>
-				<a href="{link action=delete_product id=$product_type->id}" title="Xóa mẩu tin">
+				<a href="{link action=delete_listing id=$product_type->id module=loaisanphammodule}" title="Xóa mẩu tin">
 					<img src="{$smarty.const.ICON_RELATIVE}delete.png" title="{$_TR.alt_delete}" alt="{$_TR.alt_delete}" />
 				</a>
 			{/if}
-		</div>
 		{/permissions}
-		<div class="text">
-			<h2><a href="{$product_type->id}">{$product_type->name}</a></h2>
+		</h2>
 			{include file="`$smarty.const.BASE`modules/sanphammodule/views/_sanpham.tpl}
 		</div>
 		
 	</div>
 {foreachelse}
-	<div><i>Chưa có loại sản phẩm</i></div>
+	<div class="item"><i>Chưa có loại sản phẩm</i></div>
 {/foreach}	
 
 {if $permissions.administrate == 1}
