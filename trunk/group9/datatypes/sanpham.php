@@ -51,8 +51,6 @@ class sanpham {
 			$object->provider_id = '';
 			$object->postdate = '';
 			$object->ngaysanxuat = '';
-			//$object->summary = '';
-			//$object->body = '';
 		} else {
 			$form->meta('id',$object->id);
 		}
@@ -66,6 +64,10 @@ class sanpham {
 			$default_nhasanxuat=$value;
 			break;
 		}
+		if ($object->provider_id=='')
+		{
+			$object->provider_id=$default_nhasanxuat;
+		}
 		$default_loaisanpham;
 		$loaisanpham=$db->selectDropdown("loaisanpham","name" );
 		foreach ($loaisanpham as $value=>$caption)
@@ -73,20 +75,24 @@ class sanpham {
 			$default_loaisanpham=$value;
 			break;
 		}
+		if ($object->product_type_id=='')
+		{
+			$object->product_type_id=$default_loaisanpham;
+		}
 		
 		$form->register('name','Tên',new textcontrol($object->name,50,false,200));
-		$form->register('product_type_id','Loại sản phẩm',new dropdowncontrol($default_loaisanpham,$loaisanpham,true));
-		$form->register('provider_id','Hãng sản xuất',new dropdowncontrol($default_nhasanxuat,$nhasanxuat,true));
+		$form->register('product_type_id','Loại sản phẩm',new dropdowncontrol($object->product_type_id,$loaisanpham,true));
+		$form->register('provider_id','Hãng sản xuất',new dropdowncontrol($object->provider_id,$nhasanxuat,true));
 		$form->register('xuatxu','Xuất xứ',new textcontrol($object->xuatxu,50,false,200));
 		$form->register('ngaysanxuat','Ngày sản xuất',new popupdatetimecontrol($object->ngaysanxuat));
-		$form->register('gia','Giá',new textcontrol($object->name,50,false,200));
+		$form->register('gia','Giá',new textcontrol($object->gia,50,false,200));
 		$form->register('baohanh','Bảo hành',new textcontrol($object->baohanh,50,false,200));
 		$form->register('kichthuoc','Kích thước',new textcontrol($object->kichthuoc,50,false,200));
 		$form->register('mausac','Màu sắc',new textcontrol($object->mausac,50,false,200));
 		$form->register('chitiet','Chi tiết',new htmleditorcontrol($object->chitiet));
-		$form->register('upload','Upload Picture', new uploadcontrol());
+		$form->register('upload','Hình ảnh', new uploadcontrol());
 		//$form->register('postdate','Ngày đăng',new datetimecontrol($object->postdate,true,true));
-		$form->register('submit','',new buttongroupcontrol('Save','','Cancel'));
+		$form->register('submit','',new buttongroupcontrol('Lưu','','Hủy bỏ'));
 
 		return $form;
 	}
@@ -99,7 +105,7 @@ class sanpham {
 		$object->chitiet = $values['chitiet'];
 		$object->product_type_id = $values['product_type_id'];
 		$object->provider_id = $values['provider_id'];
-		$object->postdate = date("Y/m/d");
+		$object->postdate = time();
 		$object->ngaysanxuat = $values['ngaysanxuat'];
 		$object->ngaysanxuat = popupdatetimecontrol::parseData('ngaysanxuat',$values);
 		$object->gia = $values['gia'];

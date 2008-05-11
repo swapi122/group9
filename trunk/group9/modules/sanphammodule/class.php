@@ -59,6 +59,15 @@ class sanphammodule {
 		if (!defined('SYS_SORTING')) require_once(BASE.'subsystems/sorting.php');
 		if (!defined('SYS_FILES')) require_once(BASE.'subsystems/files.php');
 		
+		$directory = 'files/sanphammodule/';
+		if (!file_exists(BASE.$directory)) {
+			$err = exponent_files_makeDirectory($directory);
+			if ($err != SYS_FILES_SUCCESS) {
+				$template->assign('noupload',1);
+				$template->assign('uploadError',$err);
+			}
+		}
+		
 		// lấy loại sản phẩm
 		$product_types = $db->selectObjects('loaisanpham');
 		// Sort lại theo tên
@@ -74,16 +83,16 @@ class sanphammodule {
 			// tooltip
 			for ($j=0;$j<count($sanpham);$j++)
 			{
-				//echo $sanpham[$j]->chitiet;
-				//$sanpham[$j]->chitiet=htmlspecialchars($sanpham[$j]->chitiet,ENT_COMPAT,"UTF-8");
 				$sanpham[$j]->chitiet=str_replace('"',"'",$sanpham[$j]->chitiet);
-				//$sanpham[$j]->chitiet=str_replace("'","\'",$sanpham[$j]->chitiet);
 				$sanpham[$j]->chitiet=str_replace("\r\n","<br>",$sanpham[$j]->chitiet);
 				$sanpham[$j]->name=str_replace('"',"'",$sanpham[$j]->name);
-				//$sanpham[$j]->name=str_replace("'","\'",$sanpham[$j]->name);
 				$sanpham[$j]->name=str_replace("\r\n","<br>",$sanpham[$j]->name);
-				//echo $sanpham[$j]->chitiet;
-				//echo $sanpham[$j]->chitiet;
+				if ($sanpham[$j]->file_id == 0) {
+					$sanpham[$j]->picpath = '';
+				} else {
+					$file = $db->selectObject('file', 'id='.$sanpham[$j]->file_id);
+					$sanpham[$j]->pic_path = $file->directory.'/'.$file->filename;
+				}
 			}
 			// nạp vào cho product_type này
 			// mình viết như thế này, mặc dầu trong object product_types không hề có thuộc tính sanpham, nhưng PHP sẽ tự thêm vào

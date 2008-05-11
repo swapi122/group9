@@ -23,9 +23,9 @@ return array(
 	'xuatxu'=>array(
 		DB_FIELD_TYPE=>DB_DEF_STRING),
 	'baohanh'=>array(
-		DB_FIELD_TYPE=>DB_DEF_INTEGER),
+		DB_FIELD_TYPE=>DB_DEF_STRING),
 	'gia'=>array(
-		DB_FIELD_TYPE=>DB_DEF_DECIMAL),
+		DB_FIELD_TYPE=>DB_DEF_STRING),
 	'kickthuoc'=>array(
 		DB_FIELD_TYPE=>DB_DEF_STRING),
 	'mausac'=>array(
@@ -33,8 +33,7 @@ return array(
 	'hinhanh'=>array(
 		DB_FIELD_TYPE=>DB_DEF_STRING),
 	'chitiet'=>array(
-		DB_FIELD_TYPE=>DB_DEF_STRING,
-		DB_FIELD_LEN=>2500),
+		DB_FIELD_TYPE=>DB_DEF_STRING),
 	"file_id"=>array(
 		DB_FIELD_TYPE=>DB_DEF_ID),
 	'download'=>array(
