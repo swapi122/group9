@@ -933,4 +933,12 @@ function exponent_users_isLoggedIn() {
 }
 
 
+
+//************************
+/*
+
+Các hàm này &#273;&#432;&#7907;c thêm vào vì không bi&#7871;t b&#7887; vào &#273;âu hehe
+*/
+
+
 ?>

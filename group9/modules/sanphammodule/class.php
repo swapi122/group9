@@ -53,8 +53,7 @@ class sanphammodule {
 		 * Hàm này sẽ show ra các sản phẩm nào được add vào mới nhất
 		 */ 
 		$max_product_per_type = 5;
-		$max_provider = 5;
-		
+		exponent_flow_set(SYS_FLOW_PUBLIC,SYS_FLOW_SECTIONAL);
 		$template = new template('sanphammodule',$view,$loc);
 		
 		if (!defined('SYS_SORTING')) require_once(BASE.'subsystems/sorting.php');
@@ -72,22 +71,26 @@ class sanphammodule {
 			// search các sản phẩm trong loại này với ngày giảm dần
 
 			$sanpham=$db->selectObjects("sanpham","product_type_id = {$product_type_id}","postdate DESC LIMIT 0,{$max_product_per_type}");
+			// tooltip
+			for ($j=0;$j<count($sanpham);$j++)
+			{
+				//echo $sanpham[$j]->chitiet;
+				//$sanpham[$j]->chitiet=htmlspecialchars($sanpham[$j]->chitiet,ENT_COMPAT,"UTF-8");
+				$sanpham[$j]->chitiet=str_replace('"',"'",$sanpham[$j]->chitiet);
+				//$sanpham[$j]->chitiet=str_replace("'","\'",$sanpham[$j]->chitiet);
+				$sanpham[$j]->chitiet=str_replace("\r\n","<br>",$sanpham[$j]->chitiet);
+				$sanpham[$j]->name=str_replace('"',"'",$sanpham[$j]->name);
+				//$sanpham[$j]->name=str_replace("'","\'",$sanpham[$j]->name);
+				$sanpham[$j]->name=str_replace("\r\n","<br>",$sanpham[$j]->name);
+				//echo $sanpham[$j]->chitiet;
+				//echo $sanpham[$j]->chitiet;
+			}
 			// nạp vào cho product_type này
 			// mình viết như thế này, mặc dầu trong object product_types không hề có thuộc tính sanpham, nhưng PHP sẽ tự thêm vào
 			$product_types[$i]->sanpham = $sanpham;
 		}
-		//------------ xếp sản phẩm theo nhà sản xuất -----------
-		$providers = $db->selectObjects('nhasanxuat');
-		usort($providers, 'exponent_sorting_byNameAscending');
-		for ($i=0;$i<count($providers);$i++)
-		{
-			$provider_id = $providers[$i]->id;
-			$sanpham=$db->selectObjects("sanpham","provider_id = {$provider_id}","postdate DESC LIMIT 0,{$max_provider}");
-			$providers[$i]->sanpham = $sanpham;
-		}
 		$template->register_permissions(array('administrate','configure'),$loc);
 		$template->assign('product_types', $product_types);
-		$template->assign('providers', $providers);
 		$template->assign('sanpham', $sanpham);
 		$template->assign('moduletitle', $title);
 		$template->output();
