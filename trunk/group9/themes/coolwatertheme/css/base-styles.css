@@ -276,28 +276,28 @@ th strong {
 }
 th {
 	background: #306bc1 url(../images/button-bg.jpg) repeat-x 0 0; 
-	/*height: 35px;*/
-	/*padding-left: 12px;
-	padding-right: 12px;*/
+	height: 35px;
+	padding-left: 12px;
+	padding-right: 12px;
 	color: #fff;
 	text-align: left;
 	border: 1px solid #306bc1;
 	border-bottom-width: 2px;
 }
 tr {
-	/*height: 32px;*/
-	/*background: #fff;	*/
+	height: 32px;
+	background: #fff;	
 }
 td {
-	/*padding-left: 12px;
+	padding-left: 12px;
 	padding-right: 12px;*/
-	/*border: 1px solid #E5F0FB; */
+	border: 1px solid #E5F0FB; 
 }
 /* end - table */
 
 .body_center, .body_center A, .body_center A:visited{
 	color:#563F3F;	
-	font-size:12px;
+	font-size:11px;
 	text-decoration:none;	
 }
 .body_center A:hover{
