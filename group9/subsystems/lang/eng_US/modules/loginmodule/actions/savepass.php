@@ -1,9 +1,9 @@
 <?php
 
 return array(
-	'not_strong_enough'=>'Your password is not strong enough : %s',
-	'unmatched_passwords'=>'Passwords do not match.',
-	'bad_password'=>'Your old password is incorrect.',
+	'not_strong_enough'=>'Mật khẩu của bạn không đủ mạnh : %s',
+	'unmatched_passwords'=>'Các mật khẩu không phù hợp.',
+	'bad_password'=>'Mật khẩu cũ của bạn không phù hợp.',
 );
 
 ?>

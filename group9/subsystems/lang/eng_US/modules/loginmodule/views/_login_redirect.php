@@ -1,7 +1,7 @@
 <?php
 
 return array(
-	'form_title'=>'Please log in to proceed',
+	'form_title'=>'Xin đăng nhập và để tiếp tục',
 );
 
 ?>

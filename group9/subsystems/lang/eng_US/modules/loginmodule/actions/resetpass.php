@@ -1,8 +1,8 @@
 <?php
 
 return array(
-	'username'=>'Username',
-	'reset'=>'Reset Password',
+	'username'=>'Tên ngừơi dùng',
+	'reset'=>'Đặt lại mật khẩu',
 );
 
 ?>

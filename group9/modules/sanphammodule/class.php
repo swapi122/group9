@@ -53,7 +53,7 @@ class sanphammodule {
 		 * Hàm này sẽ show ra các sản phẩm nào được add vào mới nhất
 		 */ 
 		$max_product_per_type = 5;
-		
+		$max_provider = 5;
 		
 		$template = new template('sanphammodule',$view,$loc);
 		
@@ -76,8 +76,19 @@ class sanphammodule {
 			// mình viết như thế này, mặc dầu trong object product_types không hề có thuộc tính sanpham, nhưng PHP sẽ tự thêm vào
 			$product_types[$i]->sanpham = $sanpham;
 		}
+		//------------ xếp sản phẩm theo nhà sản xuất -----------
+		$providers = $db->selectObjects('nhasanxuat');
+		usort($providers, 'exponent_sorting_byNameAscending');
+		for ($i=0;$i<count($providers);$i++)
+		{
+			$provider_id = $providers[$i]->id;
+			$sanpham=$db->selectObjects("sanpham","provider_id = {$provider_id}","postdate DESC LIMIT 0,{$max_provider}");
+			$providers[$i]->sanpham = $sanpham;
+		}
 		$template->register_permissions(array('administrate','configure'),$loc);
 		$template->assign('product_types', $product_types);
+		$template->assign('providers', $providers);
+		$template->assign('sanpham', $sanpham);
 		$template->assign('moduletitle', $title);
 		$template->output();
 	}

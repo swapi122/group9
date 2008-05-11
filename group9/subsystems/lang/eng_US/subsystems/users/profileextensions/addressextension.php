@@ -1,16 +1,16 @@
 <?php
 
 return array(
-	'extension_name'=>'Address Extension',
-	'extension_description'=>'Stores an address for the user.',
+	'extension_name'=>'địa chỉ mở rộng',
+	'extension_description'=>'Lưu trữ một địa chỉ cho ngừơi dùng.',
 
-	'header'=>'Address Information',
-	'address1'=>'Address',
+	'header'=>'Thông tin địa chỉ',
+	'address1'=>'Địa chỉ',
 	'address2'=>'',
-	'city'=>'City',
-	'state'=>'State',
-	'zip'=>'Zip Code',
-	'country'=>'Country',
+	'city'=>'Thành phố',
+	'state'=>'Bang',
+	'zip'=>'mã ZIP',
+	'country'=>'Quốc gia',
 );
 
 ?>

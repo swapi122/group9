@@ -1,7 +1,7 @@
 <?php
 
 return array(
-	'form_title'=>'Edit My Profile',
+	'form_title'=>'Chỉnh sửa thông tin của tôi',
 );
 
 ?>

@@ -1,17 +1,17 @@
 <?php
 
 return array(
-	'extension_name'=>'Phone Extension',
-	'extension_description'=>'Stores phone numbers for the user.',
+	'extension_name'=>'Phần mở rộng Số điện thọai',
+	'extension_description'=>'Lưu trữ số đt cho người dùng.',
 	
-	'header'=>'Phone Information',
-	'home_phone'=>'Home Phone',
-	'bus_phone'=>'Business Phone',
-	'other_phone'=>'Other Phone',
+	'header'=>'Thông tin điện thọai',
+	'home_phone'=>'Điện thọai nhà',
+	'bus_phone'=>'Điện thọai văn phòng',
+	'other_phone'=>'Khác',
 	'email'=>'Email',
 	
-	'pref_contact'=>'Preferred Contact Method',
-	'contact_time'=>'Preferred Contact Time',
+	'pref_contact'=>'Phương thức liên hệ ưu tiên',
+	'contact_time'=>'Thời gian liên hệ ưu tiên',
 );
 
 ?>

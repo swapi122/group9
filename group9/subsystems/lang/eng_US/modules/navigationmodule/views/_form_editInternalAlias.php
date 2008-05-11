@@ -1,9 +1,9 @@
 <?php
 
 return array(
-	'form_title_edit'=>'Edit Existing Internal Alias',
-	'form_title_new'=>'New Internal Alias',
-	'form_header'=>'Select which internal page you want this section to link to.  If you link to another internal alias, the aliases will all be dereferenced, and the original destination used.  If you link to an external alias, then this section will point to the external aliases external web address.',
+	'form_title_edit'=>'Chỉnh sửa bí danh bên trong đang tồn tại',
+	'form_title_new'=>'Bí danh bên trong mới',
+	'form_header'=>'Chọn trang bên trong mà bạn muốn khu vực này liên kết tới.  Nếu bạn liên kết đến 1 bí danh bên trong khác, tất cả các bí danh sẽ không được tham chiếu, và dích đầu tiên dược sử dụng.  Nếu bạn liên kết đến 1 bí danh bên ngòai, thì khu vực này sẽ trỏ đến bí danh bên ngòai,địa chỉ web bên ngòai.',
 );
 
 ?>

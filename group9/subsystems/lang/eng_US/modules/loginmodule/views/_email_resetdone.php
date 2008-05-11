@@ -1,7 +1,7 @@
 <?php
 
 return array(
-	'message'=>'Your new password is "%s"',
+	'message'=>'Mật khẩu mới của bạn là "%s"',
 );
 
 ?>

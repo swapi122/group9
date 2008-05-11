@@ -1,14 +1,14 @@
 <?php
 
 return array(
-	'name'=>'Your Name',
-	'email'=>'Your Email Address',
-	'subject'=>'Subject',
-	'message'=>'Message',
-	'send'=>'Send',
+	'name'=>'Tên của bạn',
+	'email'=>'Địa chỉ email của bạn',
+	'subject'=>'Chủ đề',
+	'message'=>'Tin nhắn',
+	'send'=>'Gửi',
 	
-	'no_contacts'=>'No contacts have been defined.  You will have to manage contacts for this Contact Form.',
-	'manage_contacts'=>'Manage Contacts',
+	'no_contacts'=>'Không có liên hệ nào được định nghĩa.  bạn sẽ phải quản lý các liên hệ cho mẫu đơn liên hệ này.',
+	'manage_contacts'=>'Quản lý các liên hệ',
 );
 
 ?>

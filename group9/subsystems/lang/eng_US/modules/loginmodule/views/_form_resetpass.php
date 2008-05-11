@@ -1,8 +1,8 @@
 <?php
 
 return array(
-	'form_title'=>'Reset Password',
-	'form_header'=>'To reset your password, enter your username below and click "Reset Password."',
+	'form_title'=>'Đặt lại mật khẩu',
+	'form_header'=>'Để đặt lại mật khẩu, nhập tên ngừơi dùng của bạn ở dưới và nhấn "Đặt lại mật khẩu',
 );
 
 ?>

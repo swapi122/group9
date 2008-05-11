@@ -1,19 +1,19 @@
 <?php
 
 return array(
-	'module_name'=>'News Module',
-	'module_description'=>'Manages news / announcements.',
+	'module_name'=>'Module tin tức',
+	'module_description'=>'Quản lý news / lời tuyên bố.',
 	
-	'perm_administrate'=>'Administrate',
-	'perm_configure'=>'Configure',
-	'perm_add_item'=>'Post',
-	'perm_delete_item'=>'Delete',
-	'perm_edit_item'=>'Edit',
-	'perm_view_unpublished'=>'View Unpublished News',
-	'perm_approve'=>'Approve',
-	'perm_manage_approval'=>'Manage Approval',
+	'perm_administrate'=>'Quản trị',
+	'perm_configure'=>'Cấu hình',
+	'perm_add_item'=>'Đăng',
+	'perm_delete_item'=>'Xóa',
+	'perm_edit_item'=>'Sửa',
+	'perm_view_unpublished'=>'Xem tin không công bố',
+	'perm_approve'=>'Phê chuẩn',
+	'perm_manage_approval'=>'Xem phê chuẩn',
 	
-	'search_category'=>'News',
+	'search_category'=>'Tin tức',
 );
 
 ?>

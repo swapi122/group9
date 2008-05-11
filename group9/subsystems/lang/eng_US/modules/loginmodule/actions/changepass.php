@@ -1,11 +1,11 @@
 <?php
 
 return array(
-	'oldpass'=>'Old Password',
-	'pass1'=>'New Password',
-	'pass2'=>'Confirm',
+	'oldpass'=>'Mật khẩu cũ',
+	'pass1'=>'Mật khẩu mới',
+	'pass2'=>'Xác nhận',
 	
-	'change'=>'Change',
+	'change'=>'Thay đồi',
 );
 
 ?>

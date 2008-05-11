@@ -1,19 +1,19 @@
 <?php
 
 return array(
-	'name'=>'Name',
+	'name'=>'Tên',
 	'email'=>'Email',
-	'contact_type'=>'Contact Type',
+	'contact_type'=>'Lọai liên hệ',
 	
-	'user_account'=>'User Account',
-	'manual_address'=>'Manually Entered Address',
+	'user_account'=>'Tài khỏang người dùng',
+	'manual_address'=>'Nhập địa chỉ bằng tay',
 	
-	'alt_edit'=>'Edit this Contact',
-	'alt_delete'=>'Delete this Contact',
-	'delete_confirm'=>'Are you sure you want to delete this Contact?',
+	'alt_edit'=>'Chỉnh sửa liên hệ này',
+	'alt_delete'=>'Xóa liên hệ này',
+	'delete_confirm'=>'Bạn có chắc mình muốn xóa liên hệ này hay không?',
 	
-	'no_contacts'=>'No contacts',
-	'new_contact'=>'New Contact',
+	'no_contacts'=>'Không có liên hệ nào',
+	'new_contact'=>'Liên hệ mới',
 );
 
 ?>

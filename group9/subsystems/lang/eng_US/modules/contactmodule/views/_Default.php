@@ -1,11 +1,11 @@
 <?php
 
 return array(
-	'form_caption'=>'Message',
-	'name'=>'Name',
-	'email'=>'Email Address',
-	'subject'=>'Subject',
-	'message'=>'Message'
+	'form_caption'=>'Tin nhắn',
+	'name'=>'Tên',
+	'email'=>'Địa chỉ Email',
+	'subject'=>'Chủ đề',
+	'message'=>'Tin nhắn'
 );
 
 ?>

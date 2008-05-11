@@ -1,8 +1,8 @@
 <?php
 
 return array(
-	'hier'=>'Site Hierarchy',
-	'pages'=>'Standalone Pages',
+	'hier'=>'Hệ thống trang',
+	'pages'=>'Các trang độc lập',
 );
 
 ?>

@@ -1,8 +1,8 @@
 <?php
 
 return array(
-	'default_message'=>'Thank you for your submission',
-	'back'=>'Back',
+	'default_message'=>'Cám ơn bạn vì sự đệ trình',
+	'back'=>'Quay lại',
 );
 
 ?>
