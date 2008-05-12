@@ -64,7 +64,7 @@ class nhasanxuatmodule {
 		
 		if (!defined('SYS_SORTING')) require_once(BASE.'subsystems/sorting.php');
 		
-		$listings = $db->selectObjects('nhasanxuat',"location_data='".serialize($loc)."'");
+		$listings = $db->selectObjects('nhasanxuat');
 		
 		//sort the listings by their rank
 		usort($listings, 'exponent_sorting_byNameAscending');

@@ -71,7 +71,7 @@ class loaisanphammodule {
 		
 		if (!defined('SYS_SORTING')) require_once(BASE.'subsystems/sorting.php');
 		
-		$listings = $db->selectObjects('loaisanpham',"location_data='".serialize($loc)."'");
+		$listings = $db->selectObjects('loaisanpham');
 		
 		//sort the listings by their rank
 		usort($listings, 'exponent_sorting_byNameAscending');
