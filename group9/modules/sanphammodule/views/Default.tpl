@@ -1,4 +1,5 @@
-﻿<div class="listingmodule default">
+﻿<script language=javascript src="{$smarty.const.THEME_RELATIVE}js/tooltip.js"></script>
+<div class="listingmodule default">
 		{permissions level=$smarty.const.UILEVEL_PERMISSIONS}
 		{if $permissions.administrate == 1}
 			<a href="{link action=userperms _common=1}"><img src="{$smarty.const.ICON_RELATIVE}userperms.png" title="{$_TR.alt_userperm}" alt="{$_TR.alt_userperm}" /></a>
