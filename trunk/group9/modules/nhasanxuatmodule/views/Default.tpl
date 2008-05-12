@@ -42,10 +42,9 @@
 		</div>
 		{/permissions}
 		<div class="text">
-			<h2 style="font-size: 14px;"><img src="{$smarty.const.ICON_RELATIVE}bullet_orange.png" border=0><a href="{$listing->summary}">{$listing->name}</h2>
+			<h2 style="font-size: 14px;"><img src="{$smarty.const.ICON_RELATIVE}bullet_orange.png" border=0><a href="{link action=view_product_by_provider module=sanphammodule id=$listing->id}">{$listing->name}</h2>		
 		</div>
-		
-	</div>
+	
 {foreachelse}
 	<div><i>Không có nhà sản xuất nào</i></div>
 {/foreach}	
