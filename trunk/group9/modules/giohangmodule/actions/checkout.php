@@ -15,12 +15,12 @@ if (exponent_users_isLoggedIn())
 	for ($i=0;$i<$size;$i++){
 		{
 			 $db->sql("INSERT INTO `exponent_chitietdonhang` (product_id, quality, donhang_id) VALUES ({$giohang[$i]->product_id},{$giohang[$i]->quality}, {$max})");
+			 $db->delete("giohang", "id = " . $giohang[$i]->id);
 		}
 	}
-	// xóa hết các đơn hàng trong gio hàng đang có nữa ha
 	
 	// tạo template mới sẽ hiện ra nội dung rằng đặt hàng thành công
-	//exponent_flow_redirect();
+	exponent_flow_redirect();
 }
 
 ?>
