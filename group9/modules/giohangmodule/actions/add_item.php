@@ -10,6 +10,7 @@ if (!defined("EXPONENT")) exit("");
 	$db->delete("giohang","last_update < {$mytime} ");
 	
 	// update last_update 
+	$mytime=$mytime+$time_out;
 	$db->sql("UPDATE exponent_giohang SET last_update = {$mytime} WHERE session_id = {$session_id}");
 	
 	// check for existing
@@ -26,8 +27,9 @@ if (!defined("EXPONENT")) exit("");
 		// add new
 		$db->sql("INSERT INTO exponent_giohang(session_id, quality, product_id) VALUES({$session_id},1,{$id})");
 	}
-	exponent_flow_redirect();
+	$sanpham=$db->selectObject("sanpham","id=".$id);
+	$template = new template('giohangmodule','_additem',$loc);
+	$template->assign("sanpham",$sanpham);
+	$template->assign('redirect',exponent_flow_get());
+	$template->output();
 ?>
-<script language=javascript>
-	alert("fdsa");
-</script>
