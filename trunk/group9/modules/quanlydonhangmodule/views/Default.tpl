@@ -55,6 +55,7 @@
 {/foreach}	
 
 {*** Phân trang *}
+<div class="text">
 Trang 
 {foreach from=$pages item=mypage}
   {if $mypage == $page}	
@@ -63,4 +64,5 @@ Trang
   	<a href="{link action=view_donhang module=quanlydonhangmodule page=$mypage}">{$mypage+1}</a> 
   {/if}	
 {/foreach}
+</div>
 </div>
