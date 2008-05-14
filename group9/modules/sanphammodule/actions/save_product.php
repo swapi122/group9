@@ -3,6 +3,9 @@
 
 if (!defined("EXPONENT")) exit("");
 
+if (!defined('SYS_SORTING')) require_once(BASE.'subsystems/sorting.php');
+if (!defined('SYS_FILES')) require_once(BASE.'subsystems/files.php');
+		
 	$listing = null;		
 	if (isset($_POST['id'])) {
 		$listing = $db->selectObject('sanpham', 'id='.$_POST['id']);
@@ -12,6 +15,7 @@ if (!defined("EXPONENT")) exit("");
 	} else {
 		
 	}
+	
 	
 	if (exponent_permissions_check("manage",$loc)) {	
 		//Get the file save it to the temp directory
