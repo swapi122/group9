@@ -14,6 +14,14 @@ if (!defined("EXPONENT")) exit("");
 	} else {
 		$listing->picpath = "";
 	}
+	
+	if ($listing->bigimage_file_id!=0) {
+		$file = $db->selectObject('file', "id=".$listing->bigimage_file_id);
+		$listing->picpath = $file->directory."/".$file->filename;
+	} else {
+		$listing->picpath = "";
+	}
+	//$echo $listing->bigimage_file_id;
 	// for product type
 	$product_type=$db->selectObject("loaisanpham","id=". $listing->product_type_id);
 	$provider=$db->selectObject("nhasanxuat","id=".$listing->provider_id);	

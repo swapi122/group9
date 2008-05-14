@@ -91,6 +91,7 @@ class sanpham {
 		$form->register('mausac','Màu sắc',new textcontrol($object->mausac,50,false,200));
 		$form->register('chitiet','Chi tiết',new htmleditorcontrol($object->chitiet));
 		$form->register('upload','Hình ảnh', new uploadcontrol());
+		$form->register('bigimage','Ảnh lớn', new uploadcontrol());
 		//$form->register('postdate','Ngày đăng',new datetimecontrol($object->postdate,true,true));
 		$form->register('submit','',new buttongroupcontrol('Lưu','','Hủy bỏ'));
 
