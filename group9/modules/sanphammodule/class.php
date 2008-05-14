@@ -27,8 +27,8 @@ PRIMARY KEY ( `id` )
  * Write on date:  
  */
 class sanphammodule {
-	function name() { return 'S&#7843;n ph&#7849;m Module'; }
-	function description() { return 'T&#7841;o danh sách các s&#7843;n ph&#7849;m'; }
+	function name() { return 'Sản phẩm Module'; }
+	function description() { return 'Tạo danh sách các sản phẩm'; }
 	function author() { return 'Vttnghia'; }
 	
 	function hasSources() { return true; }
@@ -114,7 +114,7 @@ class sanphammodule {
 	}
 
 	function searchName() {
-		return 'Danh sách các s&#7843;n ph&#7849;m';
+		return 'Sản phẩm';
 	}
 	
 	function spiderContent($item = null) {
@@ -128,21 +128,21 @@ class sanphammodule {
 		$search->ref_type = 'sanpham';
 		
 		if ($item) {
-			$db->delete('search',"ref_module='sanphammodule' AND ref_type='listing' AND original_id=" . $item->id);
+			$db->delete('search',"ref_module='sanphammodule' AND ref_type='sanpham' AND original_id=" . $item->id);
 			$search->original_id = $item->id;
 			$search->title = ' ' . $item->name . ' ';
-			$search->view_link = 'index.php?module=sanphammodule&action=view_listing&id='.$item->id;
-			$search->body = ' ' . exponent_search_removeHTML($item->body) . ' ';
-			$search->location_data = $item->location_data;
+			$search->view_link = 'index.php?module=sanphammodule&action=view_detail&id='.$item->id;
+			$search->body = ' ' . exponent_search_removeHTML($item->chitiet) . ' ';
+			$search->location_data = '';
 			$db->insertObject($search,'search');
 		} else {
-			$db->delete('search',"ref_module='sanphammodule' AND ref_type='listing'");
+			$db->delete('search',"ref_module='sanphammodule' AND ref_type='sanpham'");
 			foreach ($db->selectObjects('sanpham') as $item) {
 				$search->original_id = $item->id;
 				$search->title = ' ' . $item->name . ' ';
-				$search->view_link = 'index.php?module=sanphammodule&action=view_listing&id='.$item->id;
-				$search->body = ' ' . exponent_search_removeHTML($item->body) . ' ';
-				$search->location_data = $item->location_data;
+				$search->view_link = 'index.php?module=sanphammodule&action=view_detail&id='.$item->id;
+				$search->body = ' ' . exponent_search_removeHTML($item->chitiet) . ' ';
+				$search->location_data = '';
 				$db->insertObject($search,'search');
 			}
 		}
