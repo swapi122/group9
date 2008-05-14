@@ -16,8 +16,9 @@ CREATE TABLE `exponent_SanPham` (
 `gia` BIGINT NOT NULL ,
 `kichthuoc` TEXT,
 `mausac` TEXT,
-`file_id` INT NOT NULL ,
+`file_id` INT ,
 `chitiet` TEXT,
+`bigimage_file_id` INT,
 PRIMARY KEY ( `id` ) 
 ) 
 */

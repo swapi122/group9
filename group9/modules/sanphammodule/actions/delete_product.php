@@ -18,6 +18,12 @@ if (!defined("EXPONENT")) exit("");
 				file::delete($file);
 			}
 			$db->delete('sanpham', 'id='.$_GET['id']);
+			if ($sanpham->bigimage_file_id != 0)
+			{
+				$file = $db->selectObject('file','id='.$sanpham->bigimage_file_id);
+				file::delete($file);
+			}
+			$db->delete('sanpham', 'id='.$_GET['id']);
 			exponent_flow_redirect();
 	} 
 	else 
