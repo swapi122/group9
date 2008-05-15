@@ -13,6 +13,18 @@
 		{/permissions}
 
 	{if $moduletitle}<h1>{$moduletitle}</h1>{/if}
+	
+	<table border="1"  width="100%"  style="font-size:14px; font-family:Tahoma; color:gray; text-align:center; border-color: #B7B7B7;" align="center">
+			<tr >
+				<th >Mã ĐH</th>
+				<th >Mã KH</th>
+				<th >Ngày ĐH</th>
+				<th >Giảm Giá</th>
+				<th >Tình Trạng</th>
+				
+			</tr>
+	
+	
 	{foreach name=a from=$listings item=listing}
 	<div class="item">
 		{permissions level=$smarty.const.UILEVEL_PERMISSIONS}
@@ -41,28 +53,22 @@
 			{/if}
 		</div>
 		{/permissions}
-		<div class="text">
-			<h2>{$listing->madh}</h2>
-			<p>{$listing->makh}</p>
-			<p>{$listing->ngaydathang}</p>
-			<p>{$listing->giamgia}</p>
-			<p>{$listing->tinhtrang}</p>			
-		</div>
+		
+			<tr>
+				<td>{$listing->madh}</td>
+				<td>{$listing->makh}</td>
+				<td>{$listing->ngaydathang|format_date:"%d/%m/%Y"}</td>
+				<td>{$listing->giamgia}</td>
+				<td>{$listing->tinhtrang}</td>
+				
+			</tr>
+		
 		<div style="clear:both"></div>
 	</div>
 {foreachelse}
+	
 	<div><i>Không có đơn hàng nào</i></div>
 {/foreach}	
+	</table>
 
-{*** Phân trang *}
-<div class="text">
-Trang 
-{foreach from=$pages item=mypage}
-  {if $mypage == $page}	
-	{$mypage+1}
-  {else}
-  	<a href="{link action=view_donhang module=quanlydonhangmodule page=$mypage}">{$mypage+1}</a> 
-  {/if}	
-{/foreach}
-</div>
 </div>

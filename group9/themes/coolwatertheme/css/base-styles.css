@@ -1,5 +1,5 @@
 /********************************************
-   AUTHOR:  			Erwin Aligam 
+   AUOR:  			Erwin Aligam 
    WEBSITE:   			http://www.styleshout.com/
 	TEMPLATE NAME:		CoolWater
    TEMPLATE CODE: 	S-0019
@@ -276,12 +276,12 @@ th strong {
 }
 th {
 	background: #306bc1 url(../images/button-bg.jpg) repeat-x 0 0; 
-	/*height: 35px;*/
+	height: 35px;
 	padding-left: 12px;
 	padding-right: 12px;
 	color: #fff;
-	text-align: left;
-	border: 1px solid #306bc1;
+	text-align: center;
+	/*border: 1px solid #306bc1;
 	border-bottom-width: 2px;
 }
 tr {
@@ -303,4 +303,15 @@ td {
 .body_center A:hover{
 	color:#CC6600;
 	text-decoration:none;
+}
+
+/* my class */
+.mytable_header
+{
+	background: #306bc1 url(../images/menu2.jpg) repeat-x 0 0; 
+	height: 35px;
+	padding-left: 12px;
+	padding-right: 12px;
+	color: #653069;
+	text-align: center;
 }
