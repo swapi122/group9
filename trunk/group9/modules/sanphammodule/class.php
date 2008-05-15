@@ -19,6 +19,9 @@ CREATE TABLE `exponent_SanPham` (
 `file_id` INT ,
 `chitiet` TEXT,
 `bigimage_file_id` INT,
+`khuyenmai` int
+`chitiet_khuyenmai` text
+`gia_khuyenmai` int
 PRIMARY KEY ( `id` ) 
 ) 
 */

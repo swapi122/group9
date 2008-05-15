@@ -32,7 +32,7 @@
 ##################################################
 
 class quanlydonhangmodule {
-	function name() { return 'Đơn hàng  Module'; }
+	function name() { return 'Quản lý đơn hàng  Module'; }
 	function description() { return 'Hiện danh sách các đơn hàng'; }
 	function author() { return 'Vttnghia & Phong'; }
 	
