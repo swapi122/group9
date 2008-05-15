@@ -59,7 +59,15 @@
 				<td>{$listing->makh}</td>
 				<td>{$listing->ngaydathang|format_date:"%d/%m/%Y"}</td>
 				<td>{$listing->giamgia}</td>
-				<td>{$listing->tinhtrang}</td>
+				<td>
+				<select name='tt{$listing->id}'>
+					<option value=0 {if $listing->tinhtrang == 0 } checked {/if}>Đơn hàng mới</option>
+					<option value=1 {if $listing->tinhtrang == 1 } checked {/if}>Đang chờ thực hiện</option>
+					<option value=2 {if $listing->tinhtrang == 2 } checked {/if}>Đã giao hàng</option>
+					<option value=3 {if $listing->tinhtrang == 3 } checked {/if}>Hết hàng</option>
+					<option value=4 {if $listing->tinhtrang == 4 } checked {/if}>Lỗi khác</option>
+				</select>
+				</td>
 				
 			</tr>
 		
