@@ -4,11 +4,8 @@
 	<table  border=0>
 	<tr>
 		<td>
-			{if $listing->file_id}
-			<img class="listingimage" src="{$smarty.const.PATH_RELATIVE}thumb.php?id={$listing->file_id}&constraint=1&width=225&height=275" alt="{$listing->name}" />
-			{/if}
 			{if $listing->bigimage_file_id}
-			<img class="listingimage" src="{$smarty.const.PATH_RELATIVE}thumb.php?id={$listing->bigimage_file_id}&constraint=1&width=225&height=275" alt="{$listing->name}" />
+			<img class="listingimage" src="{$smarty.const.PATH_RELATIVE}thumb.php?id={$listing->bigimage_file_id}" alt="{$listing->name}" />
 			{/if}
 		</td>
 		<td>
