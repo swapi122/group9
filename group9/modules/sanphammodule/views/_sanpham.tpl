@@ -8,8 +8,15 @@
 {math equation='x+1' x=$mycount assign='mycount'}
 <td width=33.3%>
 <table style="border-collapse: collapse;" border="0" cellpadding="0" cellspacing="0" >
-<tbody><tr><td bgcolor="#a7a7a7" height="1" width=100%></td></tr>
-<tr><td class="body_center" align="center" bgcolor="#f4f4f4" height="30"><a href="{link action=view_detail module=sanphammodule id=$sanpham->id}" alt="Xem chi tiết sản phẩm này" title="Xem chi tiết sản phẩm này">{$sanpham->name}</a>
+<tbody>
+<tr><td bgcolor="#a7a7a7" height="1" width=100%></td></tr>
+<tr><td>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" >
+<td class="body_center" align="center" bgcolor="#f4f4f4" height="30"><a href="{link action=view_detail module=sanphammodule id=$sanpham->id}" alt="Xem chi tiết sản phẩm này" title="Xem chi tiết sản phẩm này">{$sanpham->name}</a>
+{if $sanpham->khuyenmai == 1}
+<br /><div align="center"></div><img src="{$smarty.const.THEME_RELATIVE}images/khuyenmai.gif" border="0" >
+{/if}
+
 {permissions level=$smarty.const.UILEVEL_PERMISSIONS}
 {if $permissions.configure == 1 or $permissions.administrate == 1}
 <br>
@@ -23,14 +30,14 @@
 </div>
 {/if}
 {/permissions}
+</td>
+</table>
 </td></tr>
-<tr><td bgcolor="#a7a7a7" height="1"></td></tr>
-<tr height="5"><td></td></tr>
-<tr><td width=100%>
+<tr><td bgcolor="#a7a7a7" height="1" width="100%"></td></tr>
 
-<table style="border-collapse: collapse;" border="0" cellpadding="0" cellspacing="0" width="100%">
-<tbody>
-<tr><td width="19%">
+<tr><td >
+
+
 <table style="border-collapse: collapse;" border="1" bordercolor="#a7a7a7" cellpadding="0" cellspacing="0" width="100%">
 
 <tbody><tr><td colspan="2" align="center">
@@ -55,19 +62,14 @@
 </tr>
 </tbody></table>
 </td></tr>
-</tbody></table>
-</td></tr>		  
+		  
 </tbody></table>
 
-</td>
+</td></tr>
 {* Xuong dong*}
 {if $mycount%3 eq 0}
-</tr><tr height="25"><td colspan=3></td></tr><tr>{/if}
-{foreachelse}
+<tr>{/if}{foreachelse}
 <td width=100%><div><i>Không có sản phẩm nào</i></div></td>
-{/foreach}
-
-
-	
+{/foreach}	
 </tr>
 </table>
