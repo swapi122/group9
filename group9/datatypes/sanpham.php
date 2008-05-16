@@ -93,10 +93,10 @@ class sanpham {
 		$form->register('kichthuoc','Kích thước',new textcontrol($object->kichthuoc,50,false,200));
 		$form->register('mausac','Màu sắc',new textcontrol($object->mausac,50,false,200));
 		$form->register('chitiet','Chi tiết',new htmleditorcontrol($object->chitiet));
-		$form->register('khuyenmai','Tình trạng khuyến mãi',new checkboxcontrol($object->khuyenmai,false,false,false));
-		$form->register('chitiet_khuyenmai','Chi tiết khuyến mãi',new textcontrol($object->chitiet_khuyenmai,50,false,200));
+		$form->register('khuyenmai','Có khuyến mãi',new checkboxcontrol($object->khuyenmai,false,false,false));
+		$form->register('chitiet_khuyenmai','Chi tiết khuyến mãi',new htmleditorcontrol($object->chitiet_khuyenmai));
 		$form->register('gia_khuyenmai','Giá khuyến mãi',new textcontrol($object->gia_khuyenmai,50,false,200));
-		$form->register('upload','Hình ảnh', new uploadcontrol());
+		$form->register('upload','Ảnh nhỏ', new uploadcontrol());
 		$form->register('bigimage','Ảnh lớn', new uploadcontrol());
 		//$form->register('postdate','Ngày đăng',new datetimecontrol($object->postdate,true,true));
 		$form->register('submit','',new buttongroupcontrol('Lưu','','Hủy bỏ'));

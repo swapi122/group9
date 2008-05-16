@@ -24,14 +24,14 @@
         </td>
         <td >
         {* đơn giá *}
-        {$product->product_detail->gia}
+        {$product->product_detail->gia|mynumber_format}
         </td>
         <td width="15%">
         {* Số lượng *}
         <input type=textbox name="sl{$product->id}" value="{$product->quality}" size=3>
         </td>
         <td width="20%">
-        {$product->product_detail->gia*$product->quality}
+        {$product->product_detail->gia*$product->quality|mynumber_format}
         </td>
         <td width="5%">
         <a href="{link action=remove_item id=$product-id}" title="Không mua sản phẩm này" alt="Không mua sản phẩm này">
