@@ -64,7 +64,7 @@ class dropdowncontrol extends formcontrol {
 	}
 	
 	function controlToHTML($name) {
-		$html = '<select id="' . $name . '" name="' . $name . '" size="' . $this->size . '"';
+		$html = '<select class="select" id="' . $name . '" name="' . $name . '" size="' . $this->size . '"';
 		if (isset($this->class)) $html .= ' class='.$this->class.'';
 		if ($this->disabled) $html .= ' disabled';
 		if ($this->tabindex >= 0) $html .= ' tabindex="' . $this->tabindex . '"';

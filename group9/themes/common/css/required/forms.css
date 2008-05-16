@@ -89,7 +89,12 @@ input.select {
 	border: 1px solid #4289d7; 
 	color:#777;
 }
-
+.select
+{
+border: 1px solid #4289d7; 
+	font: normal 1em Verdana, sans-serif;
+	color:#777;	
+}
 
 
 
