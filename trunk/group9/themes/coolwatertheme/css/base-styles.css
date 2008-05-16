@@ -319,3 +319,25 @@ td {
 	color: #653069;
 	text-align: center;
 }
+
+.sliderwrapper{
+position: relative; /*leave as is*/
+overflow: hidden; /*leave as is*/
+width: 510px; /*width of featured content slider*/
+height: 110px;
+}
+
+
+
+.sliderwrapper .contentdiv{
+visibility: hidden; /*leave as is*/
+position: absolute; /*leave as is*/
+left: 0;  /*leave as is*/
+top: 0;  /*leave as is*/
+background: #EFF2F4;
+width: 510px; /*width of content DIVs within slider. Total width should equal slider's inner width (390+5+5=400) */
+height: 100%;
+filter:progid:DXImageTransform.Microsoft.alpha(opacity=100);
+-moz-opacity: 1;
+opacity: 1;
+}

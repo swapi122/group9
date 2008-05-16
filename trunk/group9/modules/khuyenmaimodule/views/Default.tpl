@@ -14,17 +14,47 @@
 		{/permissions}
 
 	{if $moduletitle}<h1>{$moduletitle}</h1>{/if}
-	{foreach name=a from=$sanpham item=sp}
-	<div class="item">
-		<div class="text">
-			{$sp->id;}
-			{$echo "sdfjkahsd";}
-			{include file="`$smarty.const.BASE`modules/khuyenmaimodule/views/_sanpham.tpl}
-		</div>
-		
-	</div>
-{foreachelse}
-	<div class="item"><i>Không có sản phẩm nào khuyến mãi</i></div>
-{/foreach}	
+	{if (isset($sanpham))}
+		<div class="item">
+			<div class="text">
+				<script language=javascript src="{$smarty.const.THEME_RELATIVE}js/contentslider.js"></script>
+				<div id="slider1" class="sliderwrapper">
+				{foreach name=a from=$sanpham item=sp}	
+					<div class="contentdiv" align=center>
+						<table  border=0 valign=top>
+						    <tr>
+						        <td>
+						        	<img src="{$sp->pic_path}" border=0 width=100 height=100>
+						        </td>
+						        <td>
+						        <h2>{$sp->name}</h2>
+						        <div><b>Giá cũ</b>: <strike>{$sp->gia|mynumber_format}</strike></div>
+						        <div><b>Giá khuyến mãi</b>: <font style="font-size: 14px; font-weight: bold; color: red;">{$sp->gia_khuyenmai|mynumber_format}</font></div>
+						        <div>{$sp->chitiet_khuyenmai}</div>
+						        </td>
+						    </tr>
+						</table>
+					</div>
 
+				{/foreach}
+				</div>
+	<div id="paginate-slider1" class="pagination">
+	</div>	
+	<script type="text/javascript">
+featuredcontentslider.init({literal}{{/literal}
+	id: "slider1",  
+	contentsource: ["inline", ""],  
+	toc: "markup",
+	nextprev: ["", ""],  
+	enablefade: [true, 0.3],  
+	autorotate: [true, 3000], onChange: function(previndex, curindex){literal}{{/literal}{literal}}{/literal}
+{literal}}{/literal})
+
+</script>
+	
+			</div>		
+		</div>
+	{else}
+		<div class="item"><i>Không có sản phẩm nào khuyến mãi</i></div>
+	{/if}
 </div>

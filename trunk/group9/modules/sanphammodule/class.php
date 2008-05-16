@@ -91,6 +91,8 @@ class sanphammodule {
 				$sanpham[$j]->chitiet=str_replace("\r\n","<br>",$sanpham[$j]->chitiet);
 				$sanpham[$j]->name=str_replace('"',"'",$sanpham[$j]->name);
 				$sanpham[$j]->name=str_replace("\r\n","<br>",$sanpham[$j]->name);
+				$sanpham[$j]->chitiet_khuyenmai=str_replace('"',"'",$sanpham[$j]->chitiet_khuyenmai);
+				$sanpham[$j]->chitiet_khuyenmai=str_replace("\r\n","<br>",$sanpham[$j]->chitiet_khuyenmai);
 				if ($sanpham[$j]->file_id == 0) {
 					$sanpham[$j]->picpath = '';
 				} else {

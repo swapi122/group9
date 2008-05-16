@@ -17,7 +17,7 @@
 	{foreach name=a from=$product_types item=product_type}
 	<div class="item">
 		<div class="text">
-			<h2><a href="{$product_type->id}">{$product_type->name}</a>
+			<h2><a href="{link action=view_product_by_type module=sanphammodule id=$product_type->id}">{$product_type->name}</a>
 			{permissions level=$smarty.const.UILEVEL_PERMISSIONS}
 			{if $permissions.configure == 1 or $permissions.administrate == 1}
 				<a href="{link action=edit_listing id=$product_type->id module=loaisanphammodule}" title="Sửa lọai sản phẩm" alt="Sửa lọai sản phẩm">

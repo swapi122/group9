@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 
 class khuyenmaimodule {
@@ -37,7 +37,9 @@ class khuyenmaimodule {
 			}
 		}
 		
+		
 		$sanpham=$db->selectObjects("sanpham","khuyenmai = 1","postdate DESC LIMIT 0,{$max_sanpham_khuyenmai}");
+		
 			// tooltip
 		for ($j=0;$j<count($sanpham);$j++)
 		{
@@ -51,7 +53,6 @@ class khuyenmaimodule {
 				$file = $db->selectObject('file', 'id='.$sanpham[$j]->file_id);
 				$sanpham[$j]->pic_path = $file->directory.'/'.$file->filename;
 			}
-
 		}
 		
 		$title="SẢN PHẨM KHUYẾN MÃI";
