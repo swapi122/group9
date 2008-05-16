@@ -49,7 +49,7 @@
 </td></tr>
 
 <tr bordercolor="#A7A7A7" bgcolor="#e7e6e6">
-<td class="body_center" bgcolor="#e7e6e6" width="76%"><div align="center">{$sanpham->gia}</div></td>
+<td class="body_center" bgcolor="#e7e6e6" width="76%"><div align="center">{$sanpham->gia|mynumber_format}</div></td>
 <td class="body_center" width="24%"><div align="center"><a href="{link action=add_item module=giohangmodule id=$sanpham->id}" alt="  Mua sản phẩm này  "  title="  Mua sản phẩm này  "><img src="{$smarty.const.THEME_RELATIVE}images/giohang.gif" border="0" height="13" width="11"></a></div></td>
 
 </tr>

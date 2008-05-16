@@ -937,8 +937,11 @@ function exponent_users_isLoggedIn() {
 //************************
 /*
 
-Các hàm này &#273;&#432;&#7907;c thêm vào vì không bi&#7871;t b&#7887; vào &#273;âu hehe
+CÃ¡c hÃ m nÃ y &#273;&#432;&#7907;c thÃªm vÃ o vÃ¬ khÃ´ng bi&#7871;t b&#7887; vÃ o &#273;Ã¢u hehe
 */
-
+function mynumber_format($number)
+{
+	return number_format($number,0,",",".") . "Ä‘";
+}
 
 ?>

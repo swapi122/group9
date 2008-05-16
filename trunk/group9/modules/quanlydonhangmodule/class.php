@@ -70,7 +70,7 @@ class quanlydonhangmodule {
  			$page_count = $count/$max_item;
  		
  		$start_index = $page * $max_item;
-		$listings = $db->selectObjects("donhang"," 0<1 LIMIT {$start_index},{$max_item}");
+		$listings = $db->selectObjects("donhang"," 0<1 ORDER BY madh DESC LIMIT {$start_index},{$max_item}");
 		$template->register_permissions(array('administrate','configure'),$loc);
 		
 		// vì smarty không hỗ trợ cấu trúc for loop nên mình đành dùng foreach
@@ -80,6 +80,7 @@ class quanlydonhangmodule {
 			$mypages[$i]=$i;
 		
 		$template->assign('listings', $listings);
+		$template->assign('count_listings', count($listings));
 		$template->assign('page', $page);
 		$template->assign('page_count', $page_count);
 		$template->assign('pages', $mypages);
