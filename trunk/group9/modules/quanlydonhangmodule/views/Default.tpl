@@ -51,7 +51,7 @@
 				{permissions level=$smarty.const.UILEVEL_PERMISSIONS}
 		<div class="itemactions">
 			{if $permissions.configure == 1 or $permissions.administrate == 1}
-			<a href="{link action=delete_listing id=$listing->id}" title="Delete this entry">
+			<a href="{link action=remove_donhang id=$listing->madh}" title="Delete this entry">
 				<img src="{$smarty.const.ICON_RELATIVE}delete.png" title="{$_TR.alt_delete}" alt="{$_TR.alt_delete}" />
 			</a>
 			{/if}
