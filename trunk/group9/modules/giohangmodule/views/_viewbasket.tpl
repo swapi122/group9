@@ -10,7 +10,7 @@
         <th width="20%" class="mytable_header">Thành tiền</td>
         <th width="5%" class="mytable_header">Xóa</td>
     </tr>
-
+{assign var='total' value=0}
 {* Liệt kê danh sách sản phẩm trong giỏ hàng *}
 {foreach name=a from=$products item=product}
     <tr >
@@ -24,14 +24,26 @@
         </td>
         <td >
         {* đơn giá *}
-        {$product->product_detail->gia|mynumber_format}
+        {if $product->product_detail->khuyenmai}
+        	{$product->product_detail->gia_khuyenmai|mynumber_format}
+        {else}
+        	{$product->product_detail->gia|mynumber_format}
+        {/if}
         </td>
         <td width="15%">
         {* Số lượng *}
         <input type=textbox name="sl{$product->id}" value="{$product->quality}" size=3>
         </td>
         <td width="20%">
-        {$product->product_detail->gia*$product->quality|mynumber_format}
+        {if $product->product_detail->khuyenmai}
+        	{math equation='x*y' x=$product->product_detail->gia_khuyenmai y=$product->quality assign=temp_var}
+        	{$temp_var|mynumber_format}
+        	{math equation='x+y' x=$temp_var y=$total assign=total}
+        {else}
+        	{math equation='x*y' x=$product->product_detail->gia y=$product->quality assign=temp_var}
+        	{$temp_var|mynumber_format}
+        	{math equation='x+y' x=$temp_var y=$total assign=total}
+        {/if}
         </td>
         <td width="5%">
         <a href="{link action=remove_item id=$product-id}" title="Không mua sản phẩm này" alt="Không mua sản phẩm này">

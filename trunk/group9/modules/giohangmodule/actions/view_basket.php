@@ -25,8 +25,6 @@ if (!defined("EXPONENT")) exit("");
 	// query hết tất cả các sản phẩm đang được chọn trong giỏ hàng
 	// các sản phẩm này được nhận biết là của người đang xem bởi field session_id
 	$products = $db->selectObjects('giohang',"session_id = {$session_id}");
-	// Sort lại theo tên
-	usort($products, 'exponent_sorting_byNameAscending');
 	// ứng với mỗi sản phẩm, mình cần lấy thông tin của sản phẩm này
 	// duyệt hết danh sách sản phẩm đang có trong giỏ hàng
 	for ($i=0;$i<count($products);$i++)

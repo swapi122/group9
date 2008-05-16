@@ -89,7 +89,7 @@ class sanpham {
 		$form->register('xuatxu','Xuất xứ',new textcontrol($object->xuatxu,50,false,200));
 		$form->register('ngaysanxuat','Ngày sản xuất',new popupdatetimecontrol($object->ngaysanxuat));
 		$form->register('gia','Giá',new textcontrol($object->gia,50,false,200));
-		$form->register('baohanh','Bảo hành',new textcontrol($object->baohanh,50,false,200));
+		$form->register('baohanh','Bảo hành (tháng)',new textcontrol($object->baohanh,50,false,200));
 		$form->register('kichthuoc','Kích thước',new textcontrol($object->kichthuoc,50,false,200));
 		$form->register('mausac','Màu sắc',new textcontrol($object->mausac,50,false,200));
 		$form->register('chitiet','Chi tiết',new htmleditorcontrol($object->chitiet));
