@@ -56,7 +56,17 @@
 <div><i>Tạm thời chưa có sản phẩm nào trong giỏ hàng</i></div>
 </td></tr>
 {/foreach}
+{if $products|count > 0}
+<tr>
+<td colspan=4 align=right><font style="font-size: 16px;"><b>Tổng cộng</b></font></td>
+<td colspan=2 align=center><font style="font-size: 20px;">{$total|mynumber_format}</font></td>
+</tr>
+<tr>
+<td colspan=6 align=right><i>{$total|money_to_text}</i></td>
+</tr>
+{/if}
 </table>
+
 <br><br>
 <table  width="100%" border="0" cellspacing="10" cellpadding="0" style="font-size:14px; text-align:center;" >
 <tr>
