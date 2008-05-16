@@ -2,9 +2,9 @@
 
 
 class khuyenmaimodule {
-	function name() { return 'Listing Module'; }
-	function description() { return 'A module for creating listings.  For example you could use this module to create personal bio pages for employees, or house listings for a realator'; }
-	function author() { return 'Adam Kessler'; }
+	function name() { return 'Khuyến mãi Module'; }
+	function description() { return 'Hiển thị các sản phẩm khuyến mãi'; }
+	function author() { return 'Trung & Trọng Nghĩa'; }
 	
 	function hasSources() { return true; }
 	function hasContent() { return true; }
@@ -22,13 +22,13 @@ class khuyenmaimodule {
 		
 	function show($view,$loc = null, $title = '') {
 		global $db;
-		
-		$template = new template('listingmodule',$view,$loc);
+		$max_sanpham_khuyenmai=10;
+		$template = new template('khuyenmaimodule',$view,$loc);
 		
 		if (!defined('SYS_SORTING')) require_once(BASE.'subsystems/sorting.php');
 		if (!defined('SYS_FILES')) require_once(BASE.'subsystems/files.php');
 		
-		$directory = 'files/listingmodule/' . $loc->src;
+		$directory = 'files/sanphammodule/' . $loc->src;
 		if (!file_exists(BASE.$directory)) {
 			$err = exponent_files_makeDirectory($directory);
 			if ($err != SYS_FILES_SUCCESS) {
@@ -37,21 +37,26 @@ class khuyenmaimodule {
 			}
 		}
 		
-		$listings = $db->selectObjects('listing',"location_data='".serialize($loc)."'");
-		for($i=0; $i<count($listings); $i++) {
-			if ($listings[$i]->file_id == 0) {
-				$listings[$i]->picpath = '';
+		$sanpham=$db->selectObjects("sanpham","khuyenmai = 1","postdate DESC LIMIT 0,{$max_sanpham_khuyenmai}");
+			// tooltip
+		for ($j=0;$j<count($sanpham);$j++)
+		{
+			$sanpham[$j]->chitiet=str_replace('"',"'",$sanpham[$j]->chitiet);
+			$sanpham[$j]->chitiet=str_replace("\r\n","<br>",$sanpham[$j]->chitiet);
+			$sanpham[$j]->name=str_replace('"',"'",$sanpham[$j]->name);
+			$sanpham[$j]->name=str_replace("\r\n","<br>",$sanpham[$j]->name);
+			if ($sanpham[$j]->file_id == 0) {
+				$sanpham[$j]->picpath = '';
 			} else {
-				$file = $db->selectObject('file', 'id='.$listings[$i]->file_id);
-				$listings[$i]->picpath = $file->directory.'/'.$file->filename;
+				$file = $db->selectObject('file', 'id='.$sanpham[$j]->file_id);
+				$sanpham[$j]->pic_path = $file->directory.'/'.$file->filename;
 			}
+
 		}
 		
-		//sort the listings by their rank
-		usort($listings, 'exponent_sorting_byRankAscending');
-		
+		$title="SẢN PHẨM KHUYẾN MÃI";
 		$template->register_permissions(array('administrate','configure'),$loc);
-		$template->assign('listings', $listings);
+		$template->assign('sanpham', $sanpham);
 		$template->assign('moduletitle', $title);
 		$template->output();
 	}
@@ -65,7 +70,7 @@ class khuyenmaimodule {
 	}
 
 	function searchName() {
-		return 'Danh sách các bộ phận';
+		return 'Danh sách các sản phẩm khuyến mãi';
 	}
 	
 	function spiderContent($item = null) {
@@ -75,23 +80,23 @@ class khuyenmaimodule {
 		
 		$search = null;
 		$search->category = 'Listings';
-		$search->ref_module = 'listingmodule';
+		$search->ref_module = 'khuyenmaimodule';
 		$search->ref_type = 'listing';
 		
 		if ($item) {
-			$db->delete('search',"ref_module='listingmodule' AND ref_type='listing' AND original_id=" . $item->id);
+			$db->delete('search',"ref_module='khuyenmaimodule' AND ref_type='listing' AND original_id=" . $item->id);
 			$search->original_id = $item->id;
 			$search->title = ' ' . $item->name . ' ';
-			$search->view_link = 'index.php?module=listingmodule&action=view_listing&id='.$item->id;
+			$search->view_link = 'index.php?module=khuyenmaimodule&action=view_listing&id='.$item->id;
 			$search->body = ' ' . exponent_search_removeHTML($item->body) . ' ';
 			$search->location_data = $item->location_data;
 			$db->insertObject($search,'search');
 		} else {
-			$db->delete('search',"ref_module='listingmodule' AND ref_type='listing'");
+			$db->delete('search',"ref_module='khuyenmaimodule' AND ref_type='listing'");
 			foreach ($db->selectObjects('listing') as $item) {
 				$search->original_id = $item->id;
 				$search->title = ' ' . $item->name . ' ';
-				$search->view_link = 'index.php?module=listingmodule&action=view_listing&id='.$item->id;
+				$search->view_link = 'index.php?module=khuyenmaimodule&action=view_listing&id='.$item->id;
 				$search->body = ' ' . exponent_search_removeHTML($item->body) . ' ';
 				$search->location_data = $item->location_data;
 				$db->insertObject($search,'search');

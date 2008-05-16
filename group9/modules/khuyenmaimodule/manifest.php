@@ -1,7 +1,7 @@
 <?php
 
 return array(
-	'modules/listingmodule/class.php'=>'',
-	'modules/listingmodule/views/Default.tpl'=>'');
+	'modules/khuyenmaimodule/class.php'=>'',
+	'modules/khuyenmaimodule/views/Default.tpl'=>'');
 
 ?>
