@@ -3,6 +3,7 @@
 if (!defined("EXPONENT")) exit("");
 global $db;
 $session_id=1;
+	
 if (exponent_users_isLoggedIn())
 {
 	$mydate=time();
@@ -27,7 +28,14 @@ if (exponent_users_isLoggedIn())
 	// update giá khuyến mãi
 	$db->sql("UPDATE exponent_donhang SET giamgia = {$giamgia} WHERE madh={$max}" );
 	// tạo template mới sẽ hiện ra nội dung rằng đặt hàng thành công
-	exponent_flow_redirect();
+	$template = new template('giohangmodule',"_checkout_notlogin",$loc);
+	$template->assign('redirect',exponent_flow_get());
+}
+else
+{
+	$template = new template('giohangmodule',"_checkout_notlogin",$loc);
+	$template->assign('redirect',exponent_flow_get());
 }
 
+$template->output();
 ?>

@@ -35,21 +35,21 @@ class user {
 			$object->email = '';
 			// Username and Password can only be specified for a new user.  To change the password,
 			// a different form is used (part of the loginmodule)
-			$form->register('username',$i18n['desired_username'],new textcontrol());
-			$form->register('pass1',$i18n['pass1'], new passwordcontrol());
-			$form->register('pass2',$i18n['pass2'],new passwordcontrol());
+			$form->register('username',"Tên đăng nhập",new textcontrol());
+			$form->register('pass1',"Mật khẩu", new passwordcontrol());
+			$form->register('pass2',"Nhập lại mật khẩu",new passwordcontrol());
 			$form->register(null,'',new htmlcontrol('<br />'));
 		} else {
 			$form->meta("id",$object->id);
 		}
 		
 		// Register the basic user profile controls.
-		$form->register('firstname',$i18n['firstname'],new textcontrol($object->firstname));
-		$form->register('lastname',$i18n['lastname'],new textcontrol($object->lastname));
+		$form->register('firstname',"Họ và chữ lót",new textcontrol($object->firstname));
+		$form->register('lastname',"Tên",new textcontrol($object->lastname));
 		$form->register(null,'',new htmlcontrol('<br />'));
 		$form->register('email',$i18n['email'],new textcontrol($object->email));
 		$form->register(null,'',new htmlcontrol('<br />'));
-		$form->register('submit','',new buttongroupcontrol($i18n['save'],'',$i18n['cancel']));
+		$form->register('submit','',new buttongroupcontrol("Tạo tài khoản",'',"Hủy bỏ"));
 		
 		return $form;
 	}

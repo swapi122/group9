@@ -61,12 +61,16 @@ h1, h2, h3, h4, h5, h6{
 }
 
 div.bodycopy ul li {
-	list-style-image: url(../images/bullet.gif); 
+	list-style-image: url(../images/bullet.png); 
 }
 
 div.bodycopy ul, ol {
 	margin: 5px 15px;
 	padding: 0 25px;
+}
+
+div.sp ul li {
+	list-style-image: url(../images/bullet_feed.png); 
 }
 
 .green {
